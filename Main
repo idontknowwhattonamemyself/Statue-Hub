@@ -53,10 +53,10 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 		venyx:setTheme(theme, color3)
 	end)
 end
-end
+
 -- load
 venyx:SelectPage(venyx.pages[1], true)
-
+end
 
 
 local gameid = game.PlaceId
@@ -134,6 +134,7 @@ tp(-441061, 85, 35053);
     end
     end
 -- load
+
 venyx:SelectPage(venyx.pages[1], true)
 end
 
@@ -224,7 +225,7 @@ end
 -- load
 
 venyx:SelectPage(venyx.pages[1], true)
-
+end
 while wait() do
     if autoopen == true then
     for i, v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
