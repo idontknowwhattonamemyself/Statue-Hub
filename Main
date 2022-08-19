@@ -1,3 +1,6 @@
+
+-- init
+
 local gameid = game.PlaceId
 if gameid == 9285238704 then
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
@@ -5,12 +8,12 @@ local venyx = library.new("Statue Hub", 5013109572)
 local autowintoggle = false
 
 local themes = {
-    Background = Color3.fromRGB(24, 24, 24),
-    Glow = Color3.fromRGB(0, 0, 0),
-    Accent = Color3.fromRGB(10, 10, 10),
-    LightContrast = Color3.fromRGB(20, 20, 20),
-    DarkContrast = Color3.fromRGB(14, 14, 14),  
-    TextColor = Color3.fromRGB(255, 255, 255)
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
 }
 
 -- first page
@@ -31,9 +34,69 @@ local theme = venyx:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
 for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
-    colors:addColorPicker(theme, color, function(color3)
-        venyx:setTheme(theme, color3)
-    end)
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
+end
+while wait() do 
+    if autowintoggle == true
+    then
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441061, 85, 35053)
+    end
+    end
+-- load
+venyx:SelectPage(venyx.pages[1], true)
+end
+
+-- init
+
+local gameid = game.PlaceId
+if gameid == 6839171747 then
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Statue Hub", 5013109572)
+local autowintoggle = false
+
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = venyx:addPage("Doors", 5012544693)
+local section1 = page:addSection("Misc")
+local pussy = venyx:addPage("Pussy Section", 5012544693)
+local pus = pussy:addSection("lol how u scared of the game")
+section1:addToggle("Play The Seek Soundtrack", nil, function(firemusic)
+  
+game:GetService("Workspace")["Ambience_Seek"].Playing = firemusic
+end)
+pus:addButton("Remove Jumpscare Noises", function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush"]:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush2"]:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech:FindFirstChild("Attack"):remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech:FindFirstChild("Caught"):remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Rush"]:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Rush2"]:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Kill:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Seek"]:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.HideMonster.Scare:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.AchievementUnlock.Scare:remove()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.SpiderJumpscare.Scare:remove()
+end)
+
+
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
 end
 while wait() do 
     if autowintoggle == true
