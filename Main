@@ -98,7 +98,7 @@ function tp(...)
 end
 tp(-441061, 85, 35053);
 end)
-section1:addKeybind("Hide/Show GUI", Enum.KeyCode.One, function()
+section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
 
 	venyx:toggle()
 end, function()
