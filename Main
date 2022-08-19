@@ -27,7 +27,12 @@ end)
 section1:addButton("Win", function()
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441061, 85, 35053)
 end)
+section1:addKeybind("Hide/Show GUI", Enum.KeyCode.One, function()
 
+	venyx:toggle()
+end, function()
+
+end)
 
 -- second page
 local theme = venyx:addPage("Theme", 5012544693)
@@ -71,8 +76,11 @@ local section1 = page:addSection("Misc")
 local pussy = venyx:addPage("Pussy Section", 5012544693)
 local pus = pussy:addSection("lol how u scared of the game")
 section1:addToggle("Play The Seek Soundtrack", nil, function(firemusic)
-  
+
 game:GetService("Workspace")["Ambience_Seek"].Playing = firemusic
+end)
+  section1:addSlider("Walkspeed", 1, 1, 100, function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 pus:addButton("Remove Jumpscare Noises", function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush"]:remove()
@@ -87,7 +95,12 @@ game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].R
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.AchievementUnlock.Scare:remove()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.SpiderJumpscare.Scare:remove()
 end)
+section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
 
+	venyx:toggle()
+end, function()
+
+end)
 
 -- second page
 local theme = venyx:addPage("Theme", 5012544693)
@@ -98,12 +111,6 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 		venyx:setTheme(theme, color3)
 	end)
 end
-while wait() do 
-    if autowintoggle == true
-    then
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441061, 85, 35053)
-    end
-    end
 -- load
 venyx:SelectPage(venyx.pages[1], true)
 end
