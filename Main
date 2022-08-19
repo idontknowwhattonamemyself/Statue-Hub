@@ -1,6 +1,10 @@
 
 -- init
 
+-- init
+
+
+
 local gameid = game.PlaceId
 if gameid == 9285238704 then
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
@@ -21,11 +25,24 @@ local page = venyx:addPage("Race Clicker", 5012544693)
 local section1 = page:addSection("Section 1")
 
 section1:addToggle("Auto Win", nil, function(autowintoggletog)
-  
+   venyx:Notify("Note:", "You Can Only Win Once Per Round")
 autowintoggle = autowintoggletog
 end)
 section1:addButton("Win", function()
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441061, 85, 35053)
+local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(5,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-441061, 85, 35053);
 end)
 section1:addKeybind("Hide/Show GUI", Enum.KeyCode.One, function()
 
@@ -43,10 +60,23 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 		venyx:setTheme(theme, color3)
 	end)
 end
-while wait() do 
+while wait(7) do 
     if autowintoggle == true
     then
-            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441061, 85, 35053)
+            local plr = game:service"Players".LocalPlayer;
+local tween_s = game:service"TweenService";
+local info = TweenInfo.new(5,Enum.EasingStyle.Quad);
+function tp(...)
+   local tic_k = tick();
+   local params = {...};
+   local cframe = CFrame.new(params[1],params[2],params[3]);
+   local tween,err = pcall(function()
+       local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+       tween:Play();
+   end)
+   if not tween then return err end
+end
+tp(-441061, 85, 35053);
     end
     end
 -- load
