@@ -163,18 +163,33 @@ local section = page:addSection("Main")
 local section1 = page:addSection("Misc")
 local pussy = venyx:addPage("Pussy Section", 5012544693)
 local pus = pussy:addSection("lol how u scared of the game")
-section:addButton("Auto Notify Rush Spawn", function()
-while wait(1.5) do
-    if game:GetService("Workspace"):FindFirstChild("RushMoving").RushNew
+
+section1:addButton("Auto Monster Notify", function()
+    
+    while wait(3) do
+ 
+    if game:GetService("Workspace"):FindFirstChild("RushMoving") then
+
+    		venyx:Notify("Monster Spawn Notifier", "Rush Has Spawned, Hide Quickly!")
+    		else
+    
+    		   for i, v in pairs(game:GetService("Workspace"):GetChildren()) do 
+    if v.Name == "Lookman"
+    
 then
-    		venyx:Notify("Monster Spawn Notifier", "Rush Has Spawned, Hide In A Closet Quickly!")
-    end
-    end
+    venyx:Notify("Monster Spawn Notifier", "Eyes Has Spawned Somewhere, Dont Look!")
+end
+end
+end
+end
 end)
+
+
 section1:addToggle("Play The Seek Soundtrack", nil, function(firemusic)
 
 game:GetService("Workspace")["Ambience_Seek"].Playing = firemusic
 end)
+
 section:addToggle("Auto Open Doors", nil, function(autoopentog)
 autoopen = autoopentog
 end)
@@ -232,7 +247,8 @@ end
 -- load
 
 venyx:SelectPage(venyx.pages[1], true)
-end
+
+
 while wait() do
     if autoopen == true then
     for i, v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
@@ -241,4 +257,5 @@ while wait() do
     end
     end
     end
+end
 end
