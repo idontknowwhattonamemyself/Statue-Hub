@@ -163,7 +163,20 @@ local section = page:addSection("Main")
 local section1 = page:addSection("Misc")
 local pussy = venyx:addPage("Pussy Section", 5012544693)
 local pus = pussy:addSection("lol how u scared of the game")
-
+section1:addButton("FullBright", function()
+    game:GetService("Lighting").FogStart = 0
+    game:GetService("Lighting").ExposureCompensation = 3
+    game:GetService("Lighting").ClockTime = 12
+    game:GetService("Lighting").Brightness = 1
+    game:GetService("Lighting").GlobalShadows = false
+    while wait(.1) do
+        for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
+            if v.Parent == "Lighting" then
+                v:remove()
+    end
+        end
+end
+    end)
 section1:addButton("Auto Monster Notify", function()
     
     while wait(3) do
