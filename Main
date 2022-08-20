@@ -165,9 +165,9 @@ local pussy = venyx:addPage("Pussy Section", 5012544693)
 local pus = pussy:addSection("lol how u scared of the game")
 section:addButton("Auto Notify Rush Spawn", function()
 while wait(1.5) do
-    if game:GetService("Workspace")["Ambience_RushTease"].Playing == true
+    if game:GetService("Workspace"):FindFirstChild("RushMoving").RushNew
 then
-    		venyx:Notify("Rush Spawned", value)
+    		venyx:Notify("Monster Spawn Notifier", "Rush Has Spawned, Hide In A Closet Quickly!")
     end
     end
 end)
@@ -192,15 +192,14 @@ for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name ==
 end
 end
 end)
-section:addButton("Remove Door 50 Door", function()
+section:addButton("Remove Room 50 Door", function()
     
-for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "50" then
-    
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "50" then 
     v.Door.Door:remove()
+    v:remove()
 end
 end
 end)
-
 pus:addButton("Remove Jumpscare Noises", function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush"]:remove()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush2"]:remove()
@@ -243,4 +242,3 @@ while wait() do
     end
     end
 end
-
