@@ -345,12 +345,7 @@ section:addButton("No Screech", function()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech:remove()
 end)
 section:addButton("Remove Room 50 Door", function()
-    
-for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "50" then 
-    v.Door.Door.Door:remove()
-    v:remove()
-end
-end
+    game:GetService("Workspace").CurrentRooms:FindFirstChild("50").Door.Door:remove()
 end)
 section1:addButton("Remove Jumpscare Noises", function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush"]:remove()
