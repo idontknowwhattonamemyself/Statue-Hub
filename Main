@@ -278,7 +278,9 @@ section1:addButton("Complete Elevator Power Puzzle", function()
 section1:addButton("Auto Monster Notify", function()
     
     while wait(3) do
- 
+ if game:GetService("ReplicatedStorage").GameData.SpawnAmbush.Value == true then
+     venyx:Notify("Monster Spawn Notifier", "Ambush Has Spawned, Hide Quickly!")
+     
     if game:GetService("Workspace"):FindFirstChild("RushMoving") then
 
     		venyx:Notify("Monster Spawn Notifier", "Rush Has Spawned, Hide Quickly!")
@@ -289,6 +291,7 @@ section1:addButton("Auto Monster Notify", function()
     
 then
     venyx:Notify("Monster Spawn Notifier", "Eyes Has Spawned Somewhere, Dont Look!")
+end
 end
 end
 end
