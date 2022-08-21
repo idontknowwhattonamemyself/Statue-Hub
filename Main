@@ -208,10 +208,17 @@ autoopen = autoopentog
 end)
 
   section1:addSlider("Walkspeed", 1, 1, 100, function(value)
-game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+while wait() do
+wait()
+        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+        end
 end)
-section1:addSlider("Fov", 1, 80, 120, function(fovvalue)
-game:GetService("Workspace").Camera.FieldOfView = fovvalue
+
+
+section1:addButton("Larger FOV", function()
+game:GetService("RunService").RenderStepped:Connect(function()
+        game:GetService("Workspace").Camera.FieldOfView = 120
+        end)
 end)
 section:addButton("Remove Lever Doors", function()
     
@@ -261,14 +268,18 @@ end
 
 venyx:SelectPage(venyx.pages[1], true)
 
+    
 
 while wait() do
     if autoopen == true then
     for i, v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
     if v.Name == "ClientOpen" then
         v:FireServer()
+        wait(.5)
     end
     end
-    end
+    
 end
 end
+end
+
