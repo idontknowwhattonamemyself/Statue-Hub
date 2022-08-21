@@ -5,6 +5,87 @@
 
 -- init
 local gameid = game.PlaceId
+if gameid == 9872472334 then
+    
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Statue Hub", 5013109572)
+
+-- themes
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = venyx:addPage("Evade", 5012544693)
+local section1 = page:addSection("Section 1")
+
+
+
+section1:addButton("My Reused Hover + Speed thingy (x)", function()
+	getgenv().AutowalkToggled = false;
+local Player = game:GetService('Players').LocalPlayer;
+local Camera = workspace.Camera;
+local Speed = 200;
+
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().AutowalkToggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+        Player.Character.HumanoidRootPart.Velocity = Player.Character.HumanoidRootPart.CFrame.LookVector * Speed;
+    end;
+end)
+
+Player:GetMouse().KeyDown:connect(function(key)
+if key == "x" then
+ getgenv().AutowalkToggled = not getgenv().AutowalkToggled;
+end
+end)
+end)
+section1:addButton("My Reused Fly (z)", function()
+
+getgenv().Toggled = false;
+local Player = game:GetService('Players').LocalPlayer;
+local Camera = workspace.Camera;
+local Speed = 250;
+
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+        Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * Speed;
+    end;
+end)
+
+Player:GetMouse().KeyDown:connect(function(key)
+if key == "z" then
+ getgenv().Toggled = not getgenv().Toggled;
+end
+end)
+
+end)
+section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
+
+	venyx:toggle()
+end, function()
+
+end)
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
+end
+
+-- load
+venyx:SelectPage(venyx.pages[1], true)
+
+    end
+local gameid = game.PlaceId
 if gameid == 9103898828 then
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("Venyx", 5013109572)
