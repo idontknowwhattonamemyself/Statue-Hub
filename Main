@@ -223,7 +223,7 @@ end)
 section:addButton("Remove Room 50 Door", function()
     
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "50" then 
-    v.Door.Door:remove()
+    v.Door.Door.Door:remove()
     v:remove()
 end
 end
