@@ -26,7 +26,22 @@ local page = venyx:addPage("Evade", 5012544693)
 local section1 = page:addSection("Section 1")
 
 
-
+section1:addButton("Bot Esp", function()
+while wait(5) do
+for i,v in pairs(game:GetService("Workspace").Game.Players:GetDescendants()) do
+    if v.Name == "HRP" then
+ local esp = Instance.new("Highlight")
+ esp.Name = "Highlights"
+ esp.FillTransparency = 0
+ esp.FillColor = Color3.new(0, 0, 1)
+ esp.OutlineColor = Color3.new(1, 0.333333, 1)
+ esp.OutlineTransparency = 0.4
+ esp.Parent = v
+ v.Transparency = 0
+    end
+end
+end
+end)
 section1:addButton("My Reused Hover + Speed thingy (x)", function()
 	getgenv().AutowalkToggled = false;
 local Player = game:GetService('Players').LocalPlayer;
