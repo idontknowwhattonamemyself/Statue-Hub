@@ -161,8 +161,6 @@ local themes = {
 local page = venyx:addPage("Doors", 5012544693)
 local section = page:addSection("Main")
 local section1 = page:addSection("Misc")
-local pussy = venyx:addPage("Pussy Section", 5012544693)
-local pus = pussy:addSection("lol how u scared of the game")
 section1:addButton("FullBright", function()
     game:GetService("Lighting").FogStart = 0
     game:GetService("Lighting").ExposureCompensation = 3
@@ -176,6 +174,10 @@ section1:addButton("FullBright", function()
     end
         end
 end
+end)
+section1:addButton("Complete Elevator Power Puzzle", function()
+    game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
+
     end)
 section1:addButton("Auto Monster Notify", function()
     
@@ -197,6 +199,23 @@ end
 end
 end)
 
+section1:addButton("Esp Key", function()
+while wait(.5) do
+
+--or "Lighter" or "LeverForGate" or "Flashlight" or "Battery"
+for i,v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
+    if v.Name == "KeyObtain" or v.Name == "ElectricalKeyObtain" then
+ local esp = Instance.new("Highlight")
+ esp.Name = "Highlights"
+ esp.FillTransparency = 0
+ esp.FillColor = Color3.new(0, 0, 1)
+ esp.OutlineColor = Color3.new(1, 0.333333, 1)
+ esp.OutlineTransparency = 0.4
+ esp.Parent = v
+end
+end
+end
+end)
 
 section1:addToggle("Play The Seek Soundtrack", nil, function(firemusic)
 
@@ -226,6 +245,9 @@ for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name ==
 end
 end
 end)
+section:addButton("No Screech", function()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech:remove()
+end)
 section:addButton("Remove Room 50 Door", function()
     
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "50" then 
@@ -234,7 +256,7 @@ for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name ==
 end
 end
 end)
-pus:addButton("Remove Jumpscare Noises", function()
+section1:addButton("Remove Jumpscare Noises", function()
     game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush"]:remove()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Ambush2"]:remove()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech:FindFirstChild("Attack"):remove()
