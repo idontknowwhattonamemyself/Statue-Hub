@@ -208,10 +208,9 @@ autoopen = autoopentog
 end)
 
   section1:addSlider("Walkspeed", 1, 1, 100, function(value)
-while wait() do
-wait()
+
         game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
-        end
+        
 end)
 
 
