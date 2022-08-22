@@ -347,6 +347,12 @@ end)
 section:addButton("No Screech", function()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech:remove()
 end)
+section:addButton("No Shade", function()
+game:GetService("ReplicatedStorage").ClientModules.EntityModules.Shade:remove()
+end)
+section:addButton("No Glitch", function()
+game:GetService("ReplicatedStorage").ClientModules.EntityModules.Glitch:remove()
+end)
 section:addButton("Remove Room 50 Door", function()
     game:GetService("Workspace").CurrentRooms:FindFirstChild("50").Door.Door:remove()
 end)
@@ -391,10 +397,14 @@ while wait() do
     if v.Name == "ClientOpen" then
         v:FireServer()
         wait(.5)
+        for i, v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
+    if v.Name == "PrismaticConstraint" then
+        v.TargetPosition = 10
     end
     end
     
 end
 end
 end
-
+end
+end
