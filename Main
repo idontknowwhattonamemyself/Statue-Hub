@@ -24,9 +24,7 @@ local themes = {
 -- first page
 local page = venyx:addPage("Evade", 5012544693)
 local section1 = page:addSection("Section 1")
-section1:addButton("Remove npcs!", function()
-game:GetService("ReplicatedStorage").NPCStorage:remove()
-end)
+
 section1:addButton("Esp", function()
 
 while wait(.1) do
