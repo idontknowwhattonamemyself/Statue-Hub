@@ -24,7 +24,9 @@ local themes = {
 -- first page
 local page = venyx:addPage("Evade", 5012544693)
 local section1 = page:addSection("Section 1")
-
+section1:addButton("Knocked God Mode", function()
+game:GetService("Players").LocalPlayer.Died:remove()
+end)
 section1:addButton("Esp", function()
 
 while wait(.1) do
