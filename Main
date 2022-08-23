@@ -25,7 +25,82 @@ local themes = {
 local page = venyx:addPage("Evade", 5012544693)
 local section1 = page:addSection("Section 1")
 
+section1:addButton("Esp", function()
 
+while wait(.1) do
+
+for i, v in pairs(game:GetService("Players"):GetChildren()) do
+	if v.ClassName == "Player" and v.Character and v.Character:FindFirstChild("Head") then
+
+local BillboardGui = Instance.new("BillboardGui")
+local Name = Instance.new("TextLabel")
+local Health = Instance.new("TextLabel")
+local Healthval = Instance.new("TextLabel")
+BillboardGui.Name = "Esp"
+		BillboardGui.Parent = v.Character.Head
+		BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		BillboardGui.Active = true
+		BillboardGui.AlwaysOnTop = true
+		BillboardGui.LightInfluence = 1
+		BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+		BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
+		Healthval.Name = "HealthVal"
+		Healthval.Parent = BillboardGui
+		Healthval.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.141176)
+		Healthval.BackgroundTransparency = 1
+		Healthval.Size = UDim2.new(1, 1, 0, 50)
+		Healthval.Font = Enum.Font.Code
+		Healthval.Text = v.Character.Humanoid.Health
+		Healthval.TextColor3 = Color3.new(0, 0, 0)
+		Healthval.TextSize = 14
+		Healthval.TextXAlignment = Enum.TextXAlignment.Left
+		Healthval.Position = UDim2.new(0, 170, 0, 0)
+		Name.Name = "Name"
+		Name.Parent = BillboardGui
+		Name.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.141176)
+		Name.BackgroundTransparency = 1
+		Name.Size = UDim2.new(1, 1, 0, 50)
+		Name.Font = Enum.Font.Code
+		Name.Text = v.Name
+		Name.TextColor3 = Color3.new(0, 0, 0)
+		Name.TextSize = 14
+		Name.TextXAlignment = Enum.TextXAlignment.Left
+		local health = "Health"
+		Health.Name = health
+		Health.Parent = BillboardGui
+		Health.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.141176)
+		Health.BackgroundTransparency = 1
+		Health.Position = UDim2.new(0, 120, 0, 0)
+		Health.Size = UDim2.new(1, 100, 0, 50)
+		Health.Font = Enum.Font.Code
+		Health.Text = "Health"
+		Health.TextColor3 = Color3.new(0, 0, 0)
+		Health.TextSize = 14
+		Health.TextXAlignment = Enum.TextXAlignment.Left
+		if game:GetService("Players").LocalPlayer.Character.Head:FindFirstChild("BillboardGui") then
+		    game:GetService("Players").LocalPlayer.Character.Head.BillboardGui:remove()
+		    end
+
+	
+		end
+end
+	end
+	   
+	while wait() do
+	    game:GetService("Players").LocalPlayer.Character.Head.Esp:remove()
+end
+while wait() do
+	for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+		if v.Name == "Esp" then wait(.2) v:remove()
+		end
+	end
+end
+	while wait() do
+	    if game:GetService("Players").LocalPlayer.Character.Head:FindFirstChild("Esp") then
+	        game:GetService("Players").LocalPlayer.Character.Head.Esp:remove()
+	        end
+end
+end)
 section1:addButton("Bot Esp", function()
 while wait(5) do
 for i,v in pairs(game:GetService("Workspace").Game.Players:GetDescendants()) do
