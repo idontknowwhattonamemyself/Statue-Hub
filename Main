@@ -117,6 +117,12 @@ for i,v in pairs(game:GetService("Workspace").Game.Players:GetDescendants()) do
 end
 end
 end)
+section1:addButton("Allow Buggy Speed", function()
+game:GetService("Players").LocalPlayer.Character.Communicator:remove()
+end)
+section1:addSlider("Speed (may be buggy)", 1, 1, 60, function(value)
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
 section1:addButton("My Reused Hover + Speed thingy (x)", function()
 	getgenv().AutowalkToggled = false;
 local Player = game:GetService('Players').LocalPlayer;
