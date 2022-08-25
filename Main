@@ -5,6 +5,75 @@
 
 -- init
 local gameid = game.PlaceId
+if gameid == 9284097280 then
+    
+-- init
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Statue Hub", 5013109572)
+
+-- themes
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+local page = venyx:addPage("AT", 5012544693)
+local section1 = page:addSection("Main")
+section1:addButton("Remove Purchase Prompts", function()
+game:GetService("CoreGui").PurchasePrompt:remove()
+end)
+section1:addButton("Auto Collect", function()
+	while wait(.5) do
+local Playerhead = game:GetService("Players").LocalPlayer.Character.Head
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "TouchInterest" and v.Parent.Name == "Part" then
+ firetouchinterest(v.Parent, Playerhead, 1)
+firetouchinterest(v.Parent, Playerhead, 0)
+end
+end
+end
+end)
+section1:addButton("Auto Buy", function()
+while wait(.5) do
+    local Playerhead = game:GetService("Players").LocalPlayer.Character.Head
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+if v.Name == "Price" then
+    firetouchinterest(v.Parent.Parent, Playerhead, 0)
+    firetouchinterest(v.Parent.Parent, Playerhead, 1)
+end
+end
+end
+end)
+section1:addButton("Auto Clean", function()
+while wait(.5) do
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "Puddle" and v:FindFirstChild("ProximityPrompt") then
+fireproximityprompt(v.ProximityPrompt, 1)
+end
+end
+end
+end)
+
+
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
+end
+
+-- load
+venyx:SelectPage(venyx.pages[1], true)
+
+    end
 if gameid == 9872472334 then
     
 -- init
