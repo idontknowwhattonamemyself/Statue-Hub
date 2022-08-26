@@ -409,7 +409,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Green
 local venyx = library.new("Statue Hub", 5013109572)
 
 local autoopen = false
-local antirush = false
+
 local themes = {
 	Background = Color3.fromRGB(24, 24, 24),
 	Glow = Color3.fromRGB(0, 0, 0),
@@ -441,7 +441,37 @@ end)
 section1:addButton("Complete Elevator Power Puzzle", function()
     game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
 
-    end)
+end)
+section1:addButton("Auto Complete (buggy)", function()
+    repeat wait()
+local name = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
+
+local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name)
+if latest.Door:FindFirstChild("Lock") then
+    name = name + 1
+end
+if name == "50" then
+     name = name + 2
+end
+if game:GetService("Workspace"):FindFirstChild("RushMoving") then
+    local Players = game:GetService("Players")
+
+ 
+
+	local player = Players.LocalPlayer
+	local character = player.Character
+	if character and character.Parent then
+		-- Move the character 10 studs forwards in the direction they're facing
+		local currentPivot = character:GetPivot()
+		character:PivotTo(currentPivot * CFrame.new(0, 15, 0))
+	end
+	repeat wait() until not game:GetService("Workspace"):FindFirstChild("RushMoving")
+    end
+
+local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name)
+		game:GetService("Players").LocalPlayer.Character:PivotTo(latest.RoomEnd.CFrame + Vector3.new(0,0,0))
+until name == "100"
+end)
 section1:addButton("Auto Monster Notify", function()
     
     while wait(3) do
@@ -482,8 +512,7 @@ end
 end
 end
 end)
-section1:addToggle("AntiRush", nil, function(antirush)
-end)
+
 section1:addToggle("Play The Seek Soundtrack", nil, function(firemusic)
 
 game:GetService("Workspace")["Ambience_Seek"].Playing = firemusic
@@ -505,6 +534,18 @@ section1:addKeybind("Tp Forward", Enum.KeyCode.T, function()
 	if character and character.Parent then
 		local currentPivot = character:GetPivot()
 		character:PivotTo(currentPivot * CFrame.new(0, 0, -15))
+		end
+	
+end, function()
+
+end)
+section1:addKeybind("Tp Upward", Enum.KeyCode.Z, function()
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	local character = player.Character
+	if character and character.Parent then
+		local currentPivot = character:GetPivot()
+		character:PivotTo(currentPivot * CFrame.new(0, 15, 0))
 		end
 	
 end, function()
