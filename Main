@@ -447,43 +447,60 @@ section1:addButton("Auto Complete (buggy)", function()
 local name = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
 
 local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name)
+
 if latest.Door:FindFirstChild("Lock") then
-    name = name + 1
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+        if v.Name == "ModulePrompt" then
+            
+            game:GetService("Players").LocalPlayer.Character:PivotTo(v.Parent.Hitbox.CFrame + Vector3.new(0,0,0))
+            wait(.1)
+            if v.Parent == "DrawerContainer" then
+                wait(1)
+                fireproximityprompt(v.Parent.Knobs.ActivateEventPrompt, 1)
+                wait(.6)
+                end
+            		game:GetService("Players").LocalPlayer.Character:PivotTo(latest.RoomEnd.CFrame + Vector3.new(0,0,0))
+            		wait(.1)
+   fireproximityprompt(latest.Door.Lock.UnlockPrompt, 1)
+   --game:GetService("Workspace").CurrentRooms.0.Assets.Dresser.DrawerContainer.Knobs.ActivateEventPrompt
 end
-if name == "49" then
-     name = name + 2
+end
+end
+
+if name == "50" then
+     game:GetService("Workspace").CurrentRooms["50"]:remove()
 end
 if game:GetService("Workspace"):FindFirstChild("RushMoving") then
     local Players = game:GetService("Players")
 
  
 
-    local player = Players.LocalPlayer
-    local character = player.Character
-    if character and character.Parent then
-        -- Move the character 10 studs forwards in the direction they're facing
-        local currentPivot = character:GetPivot()
-        character:PivotTo(currentPivot * CFrame.new(0, 30, 0))
-    end
-    repeat wait() until not game:GetService("Workspace"):FindFirstChild("RushMoving")
+	local player = Players.LocalPlayer
+	local character = player.Character
+	if character and character.Parent then
+	
+		local currentPivot = character:GetPivot()
+		character:PivotTo(currentPivot * CFrame.new(4, 100, 3))
+	end
+	repeat wait() until not game:GetService("Workspace"):FindFirstChild("RushMoving")
     end
 if game:GetService("Workspace"):FindFirstChild("AmbushMoving") then
     local Players = game:GetService("Players")
 
  
 
-    local player = Players.LocalPlayer
-    local character = player.Character
-    if character and character.Parent then
-        -- Move the character 10 studs forwards in the direction they're facing
-        local currentPivot = character:GetPivot()
-        character:PivotTo(currentPivot * CFrame.new(0, 30, 0))
-    end
-    repeat wait() until not game:GetService("Workspace"):FindFirstChild("AmbushMoving")
+	local player = Players.LocalPlayer
+	local character = player.Character
+	if character and character.Parent then
+		
+		local currentPivot = character:GetPivot()
+		character:PivotTo(currentPivot * CFrame.new(0, 30, 0))
+	end
+	repeat wait() until not game:GetService("Workspace"):FindFirstChild("AmbushMoving")
     end
 local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name)
-        game:GetService("Players").LocalPlayer.Character:PivotTo(latest.RoomEnd.CFrame + Vector3.new(0,0,0))
-until name == "100"
+		game:GetService("Players").LocalPlayer.Character:PivotTo(latest.RoomEnd.CFrame + Vector3.new(0,0,0))
+until name == "99"
 end)
 section1:addButton("Auto Monster Notify", function()
     
