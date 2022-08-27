@@ -32,6 +32,19 @@ section1:addButton("All Cubits", function()
 			end
 		end
     end)
+section1:addButton("Die.", function()
+    while wait(.2) do
+    local args = {
+    [1] = "Input",
+    [2] = "Fireball",
+    [3] = 0,
+    [4] = "Fireball"
+}
+
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer(unpack(args))
+end
+
+    end)
 
 section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
 
