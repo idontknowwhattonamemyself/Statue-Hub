@@ -60,11 +60,11 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 	colors:addColorPicker(theme, color, function(color3)
 		venyx:setTheme(theme, color3)
 	end)
-end
-end
+
 -- load
 venyx:SelectPage(venyx.pages[1], true)
-
+end
+end
 local gameid = game.PlaceId
 
 if gameid == 10524502174 then
