@@ -173,7 +173,9 @@ rconsolename("STATUE HUB BBFT AUTOFARM")
 wait(5)
 repeat wait() until lp.Character
 rconsoleprint("@@MAGENTA@@")
-rconsoleprint("Successfully Made It To The End, Restarting... ")
+local currentgold = game:GetService("Players").LocalPlayer.Data.Gold.Value
+rconsoleprint("Successfully Made It To The End, Current Gold: ")
+rconsoleprint(currentgold)
 end
 end
 
