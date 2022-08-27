@@ -168,7 +168,8 @@ bypass_teleport(teleport_table.location22)
 bypass_teleport(teleport_table.location23)
 bypass_teleport(teleport_table.location24)
 bypass_teleport(teleport_table.location25)
-
+rconsolename("STATUE HUB BBFT AUTOFARM")
+rconsoleprint("Successfully Made It To The End")
 wait(3)
 repeat wait() until lp.Character
 end
