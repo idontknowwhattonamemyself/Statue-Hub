@@ -50,7 +50,7 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 		venyx:setTheme(theme, color3)
 	end)
 end
-end
+
 -- load
 venyx:SelectPage(venyx.pages[1], true)
 if gameid == 10524502174 then
@@ -889,6 +889,7 @@ while wait() do
     end
     end
     
+end
 end
 end
 end
