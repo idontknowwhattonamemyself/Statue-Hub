@@ -622,6 +622,7 @@ section1:addButton("Complete Elevator Power Puzzle", function()
     game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
 
 end)
+
 section1:addButton("Auto Complete (buggy)", function()
 
 repeat wait()
@@ -634,7 +635,9 @@ if latest then
 if latest.Door:FindFirstChild("Lock") then
     for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
         if v.Name == "ModulePrompt"  and v.Parent:FindFirstChild("Hitbox") then
+           repeat wait()
             fireproximityprompt(v)
+            until not v
             game:GetService("Players").LocalPlayer.Character:PivotTo(v.Parent.Hitbox.CFrame + Vector3.new(0,0,0))
             fireproximityprompt(v)
             wait(1)
