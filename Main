@@ -49,7 +49,7 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 		venyx:setTheme(theme, color3)
 	end)
 end
-while wait() do
+while wait(.5) do
     if AutoFarmbb == true then
   
 local teleport_table = {
@@ -84,7 +84,7 @@ local teleport_table = {
 }
 
 local tween_s = game:GetService("TweenService")
-local tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Linear)
+local tweeninfo = TweenInfo.new(.85,Enum.EasingStyle.Linear)
 local lp = game:GetService("Players").LocalPlayer
 function bypass_teleport(v)
     if lp.Character and
@@ -125,7 +125,8 @@ bypass_teleport(teleport_table.location22)
 bypass_teleport(teleport_table.location23)
 bypass_teleport(teleport_table.location24)
 bypass_teleport(teleport_table.location25)
-wait(12)
+
+wait(3)
 repeat wait() until lp.Character
 end
 end
