@@ -170,7 +170,7 @@ bypass_teleport(teleport_table.location24)
 bypass_teleport(teleport_table.location25)
 rconsolename("STATUE HUB BBFT AUTOFARM")
 
-wait(5)
+wait(1)
 repeat wait() until lp.Character
 rconsoleprint("@@MAGENTA@@")
 local currentgold = game:GetService("Players").LocalPlayer.Data.Gold.Value
