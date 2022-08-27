@@ -27,7 +27,7 @@ local section1 = page:addSection("Main")
 local AutoFarm = false
 local autofarmon = false
 section1:addButton("Respawn", function()
-    game:GetService("Players").LocalPlayer.Character:remove()
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
     end)
 section1:addButton("KillAura", function()
  local lp = game:GetService("Players").LocalPlayer
@@ -84,7 +84,7 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 	end)
 end
 while wait() do
-    if Autofarm == true then
+    if Autofarm == true and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
 hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
 hrp.CFrame = CFrame.new(14, 49, -350)
 wait(.0)
