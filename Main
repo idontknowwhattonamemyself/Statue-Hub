@@ -20,6 +20,12 @@ local page = venyx:addPage("BBFT", 5012544693)
 local section1 = page:addSection("Main")
 local AutoFarmbb = false
 section1:addButton("Antilag (IY)", function()
+    while wait(5) do
+    local fps = workspace:GetRealPhysicsFPS()
+if fps < 10 then
+    game:GetService("TeleportService"):Teleport(537413528)
+end
+end
     local RunService = game:GetService("RunService")
 local Lighting = game:GetService("Lighting")
 local Terrain = workspace:FindFirstChildOfClass('Terrain')
