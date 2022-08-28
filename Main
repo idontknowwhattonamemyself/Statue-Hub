@@ -272,7 +272,7 @@ end
 repeat wait() until lp.Character
 rconsolename("STATUE HUB BBFT AUTOFARM")
 
-wait(15)
+wait(4)
 repeat wait() until lp.Character
 rconsoleprint("@@MAGENTA@@")
 local currentgold = game:GetService("Players").LocalPlayer.Data.Gold.Value
