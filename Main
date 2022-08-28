@@ -19,6 +19,13 @@ local themes = {
 local page = venyx:addPage("BBFT", 5012544693)
 local section1 = page:addSection("Main")
 local AutoFarmbb = false
+section1:addButton("Anti-AFK", function()
+    local vu =game:GetService('VirtualUser')
+game:GetService('Players').LocalPlayer.Idled:connect(function()
+vu:CaptureController()
+vu:ClickButton2(Vector2.new())
+end)
+end)
 section1:addButton("Antilag (IY)", function()
     while wait(5) do
     local fps = workspace:GetRealPhysicsFPS()
