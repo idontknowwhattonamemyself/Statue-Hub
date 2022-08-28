@@ -154,6 +154,8 @@ local antifall = Instance.new("BodyVelocity")
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location1)
 wait(.3)
 end
+if success == false then
+    end
  if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location2)
 wait(.3)
