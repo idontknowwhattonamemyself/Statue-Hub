@@ -94,40 +94,45 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 end
 while wait(.5) do
     if AutoFarmbb == true then
+
   
 local teleport_table = {
     location1 = Vector3.new(-59, 93, 124),
     location2 = Vector3.new(-65, 90, 986),
-    location3 = Vector3.new(-56, 89, 1368),
+    location3 = Vector3.new(-71, 68, 1320),
     
-     location4 = Vector3.new(-48, 90, 1953),
+     location4 = Vector3.new(-73, 63, 1385),
       
-     location5 = Vector3.new(-50, 90, 2070),
-     location6 = Vector3.new(-53, 90, 2170),
-     location7 = Vector3.new(-68, 90, 2604),
-     location8 = Vector3.new(-59, 90, 2874),
-     location9 = Vector3.new(-60, 90, 2992),
-     location10 = Vector3.new(-56, 90, 3634),
-     location11 = Vector3.new(-66, 90, 3721),
-     location12 = Vector3.new(-76, 90, 4390),
-     location13 = Vector3.new(-76, 90, 4537),
-     location14 = Vector3.new(-92, 90, 5191),
-     location15 = Vector3.new(-93, 90, 5264),
-     location16 = Vector3.new(-88, 90, 5956),
-     location17 = Vector3.new(-89, 90, 6023),
-     location18 = Vector3.new(-91, 90, 6815),
-     location19 = Vector3.new(-102, 90, 7498),
-     location20 = Vector3.new(-100, 90, 7587),
-     location21 = Vector3.new(-110, 90, 8243),
-     location22 = Vector3.new(-109, 148, 8745),
-     location23 = Vector3.new(-30, -299, 8745),
-     location24 = Vector3.new(-56, -360, 9427),
-     location25 = Vector3.new(-55, -359, 9489)
-   
+     location5 = Vector3.new(-79, 91, 1972),
+     location6 = Vector3.new(-79, 91, 2080),
+     location7 = Vector3.new(-81, 91, 2190),
+     location8 = Vector3.new(-84, 116, 2638),
+     location9 = Vector3.new(-69, 116, 2861),
+     location10 = Vector3.new(-69, 116, 2952),
+     location11 = Vector3.new(-69, 116, 3604),
+     location12 = Vector3.new(-69, 116, 3687),
+     location13 = Vector3.new(-69, 116, 4122),
+     location14 = Vector3.new(-70, 116, 4402),
+     location15 = Vector3.new(-70, 116, 4480),
+     location16 = Vector3.new(-70, 116, 4863),
+     location17 = Vector3.new(-70, 116, 5102),
+     location18 = Vector3.new(-70, 116, 5289),
+     location19 = Vector3.new(-58, 116, 5724),
+     location20 = Vector3.new(-61, 116, 5921),
+     location21 = Vector3.new(-61, 116, 6050),
+     location22 = Vector3.new(-59, 116, 6392),
+     location23 = Vector3.new(-58, 116, 6701),
+     location24 = Vector3.new(-58, 116, 6808),
+     location25 = Vector3.new(-81, 116, 7464),
+   location26 = Vector3.new(-87, 116, 7559),
+   location27 = Vector3.new(-56, 116, 8076),
+   location28 = Vector3.new(-56, 116, 8250),
+    location29 = Vector3.new(-56, -358, 9491),
+
 }
 
 local tween_s = game:GetService("TweenService")
-local tweeninfo = TweenInfo.new(.85,Enum.EasingStyle.Linear)
+local tweeninfo = TweenInfo.new(.5,Enum.EasingStyle.Linear)
 local lp = game:GetService("Players").LocalPlayer
 function bypass_teleport(v)
     if lp.Character and
@@ -141,33 +146,71 @@ function bypass_teleport(v)
         a.Completed:wait()
         antifall:remove()
     end
- end
-
-bypass_teleport(teleport_table.location1)
-bypass_teleport(teleport_table.location2)
-bypass_teleport(teleport_table.location3)
+end
+local antifall = Instance.new("BodyVelocity")
+        antifall.velocity = Vector3.new(0,0,0)
+        antifall.Parent = lp.Character.HumanoidRootPart
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location1)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location2)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location3)
+wait(.3)
 bypass_teleport(teleport_table.location4)
-bypass_teleport(teleport_table.location5)
-bypass_teleport(teleport_table.location6)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location5)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location6)
+wait(.3)
+
 bypass_teleport(teleport_table.location7)
-bypass_teleport(teleport_table.location8)
-bypass_teleport(teleport_table.location9)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location8)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location9)
+wait(.3)
+
 bypass_teleport(teleport_table.location10)
-bypass_teleport(teleport_table.location11)
-bypass_teleport(teleport_table.location12)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location11)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location12)
+wait(.3)
+
 bypass_teleport(teleport_table.location13)
-bypass_teleport(teleport_table.location14)
-bypass_teleport(teleport_table.location15)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location14)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location15)
+wait(.3)
 bypass_teleport(teleport_table.location16)
-bypass_teleport(teleport_table.location17)
-bypass_teleport(teleport_table.location18)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location17)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location18)
+wait(.3)
 bypass_teleport(teleport_table.location19)
-bypass_teleport(teleport_table.location20)
-bypass_teleport(teleport_table.location21)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location20)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location21)
+wait(.3)
 bypass_teleport(teleport_table.location22)
-bypass_teleport(teleport_table.location23)
-bypass_teleport(teleport_table.location24)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location23)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location24)
+wait(.3)
 bypass_teleport(teleport_table.location25)
+
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location26)
+wait(.3)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location27)
+wait(.3)
+bypass_teleport(teleport_table.location28)
+bypass_teleport(teleport_table.location29)
+repeat wait() until lp.Character
 rconsolename("STATUE HUB BBFT AUTOFARM")
 
 wait(1)
