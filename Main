@@ -150,66 +150,123 @@ end
 local antifall = Instance.new("BodyVelocity")
         antifall.velocity = Vector3.new(0,0,0)
         antifall.Parent = lp.Character.HumanoidRootPart
+        if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location1)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location2)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location3)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location4)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location5)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location6)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 
 bypass_teleport(teleport_table.location7)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location8)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location9)
 wait(.3)
 
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
+
 bypass_teleport(teleport_table.location10)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location11)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location12)
 wait(.3)
-
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location13)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location14)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location15)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location16)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location17)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location18)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location19)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location20)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location21)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location22)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location23)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location24)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location25)
-
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 wait(.3)
+    end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location26)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location27)
 wait(.3)
+end
+ if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location28)
 bypass_teleport(teleport_table.location29)
+end
 repeat wait() until lp.Character
 rconsolename("STATUE HUB BBFT AUTOFARM")
 
