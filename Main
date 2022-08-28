@@ -127,7 +127,7 @@ local teleport_table = {
    location26 = Vector3.new(-87, 116, 7559),
    location27 = Vector3.new(-56, 116, 8076),
    location28 = Vector3.new(-56, 116, 8250),
-    location29 = Vector3.new(-56, -353, 9491),
+    location29 = Vector3.new(-56, -363, 9493)
 
 }
 
@@ -265,7 +265,7 @@ wait(.3)
 end
  if lp.Character:FindFirstChild("HumanoidRootPart") then
 bypass_teleport(teleport_table.location28)
-bypass_teleport(teleport_table.location29)
+lp.Character.HumanoidRootPart.CFrame = CFrame.new(teleport_table.location29)
 end
 repeat wait() until lp.Character
 rconsolename("STATUE HUB BBFT AUTOFARM")
