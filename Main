@@ -125,6 +125,20 @@ for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name ==
 end
 end
 end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "ArdorianKillbrick" then do
+   
+    v.CFrame = CFrame.new(6900000,690000,690000)
+    
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Lava" then do
+   
+    v.CFrame = CFrame.new(6900000,690000,690000)
+    
+end
+end
+end
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "PitKillBrick" then do
   
     v.CFrame = CFrame.new(6900000,690000,690000)
