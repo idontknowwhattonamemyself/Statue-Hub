@@ -132,7 +132,7 @@ for i, v in pairs(game:GetService("Workspace").Live:GetDescendants()) do
 end
 end
 if augahghagw == true then
-  venyx:Notify("Illusionist In Server", "Be Careful!")
+  venyx:Notify("Illusionist In Server", "Be Careful!      ")
   end
 end
 
