@@ -54,6 +54,13 @@ game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.Dodge:
 end
 end
 end)
+section1:addButton("No Orderly Barriers", function()
+    for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
+        if v.Name == "OrderField" then
+            v:remove()
+            end
+        end
+end)
 section1:addButton("Auto Trinket Pickup", function()
     
     while wait(2) do
