@@ -88,7 +88,11 @@ local function brightFunc()
 		Lighting.GlobalShadows = false
 		Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
 	end
-
+for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
+            if v.Parent == "Lighting" then
+                v:remove()
+    end
+        end
 	game:GetService("RunService").Heartbeat:Connect(brightFunc)
 end)
 section1:addButton("No Fall", function()
