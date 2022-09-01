@@ -1,3 +1,148 @@
+if game.PlaceId == 9963328741 then
+    local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Statue Hub", 5013109572)
+
+-- themes
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+
+
+
+
+local page = venyx:addPage("Not Rogue Lineage", 5012544693)
+local section1 = page:addSection("Main")
+getgenv().Toggled = false;
+local Player = game:GetService('Players').LocalPlayer;
+local Camera = workspace.Camera;
+local FlySpeed = 250;
+
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+        Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+    end;
+end)
+
+
+
+
+getgenv().AutowalkToggled = false;
+
+local Speed = 200;
+wait(.5)
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().AutowalkToggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+        Player.Character.HumanoidRootPart.Velocity = Player.Character.HumanoidRootPart.CFrame.LookVector * Speed;
+    end;
+end)
+
+section1:addButton("No Fall", function()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("ApplyFallDamage") then
+    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.ApplyFallDamage:remove()
+    end
+end)
+section1:addKeybind("Speed", Enum.KeyCode.X, function()
+getgenv().AutowalkToggled = not getgenv().AutowalkToggled
+	
+end, function()
+
+end)
+section1:addKeybind("Fly", Enum.KeyCode.Z, function()
+getgenv().Toggled = not getgenv().Toggled
+	
+end, function()
+
+end)
+
+section1:addButton("No Kill Bricks", function()
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "KillBrick" then do 
+ 
+  
+    v.CFrame = CFrame.new(6900000,690000,690000)
+
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "ArdorianKillBrick" then do
+   
+    v.CFrame = CFrame.new(6900000,690000,690000)
+    
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "PitKillBrick" then do
+  
+    v.CFrame = CFrame.new(6900000,690000,690000)
+   
+end
+end
+end
+end)
+    
+section1:addButton("Respawn", function()
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+end)
+section1:addButton("Rejoin", function()
+    game:GetService("TeleportService"):Teleport(9963328741)
+    end)
+
+
+    
+
+
+section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
+
+	venyx:toggle()
+end, function()
+
+end)
+
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
+end
+while wait(3) do
+    
+local augahghagw = false
+for i, v in pairs(game:GetService("Players"):GetDescendants()) do
+    if v.Name == "Observe" then
+       
+        augahghagw = true
+    
+end
+end
+for i, v in pairs(game:GetService("Workspace").Live:GetDescendants()) do
+    if v.Name == "Observe" then
+       
+        augahghagw = true
+
+
+end
+end
+if augahghagw == true then
+  venyx:Notify("Illusionist In Server", "Be Careful!")
+  end
+end
+
+
+    
+-- load
+venyx:SelectPage(venyx.pages[1], true)
+
+end
+wait(.5)
 if game.PlaceId == 9980179145 then
     local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("Statue Hub", 5013109572)
