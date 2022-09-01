@@ -73,6 +73,10 @@ end
 end
 
 end)
+section1:addButton("No Vamp Burn", function()
+	game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.SunBurn:remove()
+
+end)
 section1:addButton("Full Bright", function()
 local Lighting = game:GetService("Lighting")
 local function brightFunc()
