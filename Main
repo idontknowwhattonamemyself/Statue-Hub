@@ -42,7 +42,7 @@ game:GetService'RunService'.RenderStepped:Connect(function()
         Player.Character.HumanoidRootPart.Velocity = Player.Character.HumanoidRootPart.CFrame.LookVector * Speed;
     end;
 end)
-section1:addToggle("Auto Farm Tundra 7", nil, function(autofarmt7tog)
+section1:addToggle("Auto Farm Tundra 2", nil, function(autofarmt7tog)
     autofarmt7 = autofarmt7tog
 venyx:Notify("AutoFarm Notification", "Make Sure To Have Trinket AutoPickup On")
 end)
@@ -205,9 +205,9 @@ while wait() do
 if autofarmt7 == true then
   
 local teleport_table = {
-    location1 = Vector3.new(4709, 689, 1265),
-    location2 = Vector3.new(4699, 689, 1400),
-    location3 = Vector3.new(4801, 690, 1522),
+    location1 = Vector3.new(3976, 439, -786),
+    location2 = Vector3.new(3991, 439, -1014),
+    location3 = Vector3.new(4021, 439, -1015),
     
      location4 = Vector3.new(4790, 689, 1650),
       
@@ -225,7 +225,7 @@ local teleport_table = {
 }
 
 local tween_s = game:GetService("TweenService")
-local tweeninfo = TweenInfo.new(3,Enum.EasingStyle.Linear)
+local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
 local lp = game:GetService("Players").LocalPlayer
 function bypass_teleport(v)
     if lp.Character and
@@ -242,34 +242,11 @@ function bypass_teleport(v)
  end
 
 bypass_teleport(teleport_table.location1)
-wait(1.3)
+wait(5)
 bypass_teleport(teleport_table.location2)
-wait(1.3)
+wait(2)
 bypass_teleport(teleport_table.location3)
-wait(1.3)
-
-bypass_teleport(teleport_table.location4)
-wait(1.3)
-
-bypass_teleport(teleport_table.location5)
-wait(1.3)
-
-bypass_teleport(teleport_table.location6)
-wait(1.3)
-
-bypass_teleport(teleport_table.location7)
-wait(1.3)
-
-bypass_teleport(teleport_table.location8)
-wait(1.3)
-
-bypass_teleport(teleport_table.location10)
-wait(1.3)
-
-bypass_teleport(teleport_table.location11)
-wait(1.3)
-bypass_teleport(teleport_table.location12)
-wait(1.3)
+wait(2)
 repeat wait() until lp.Character
 
 end
