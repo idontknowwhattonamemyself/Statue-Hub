@@ -46,6 +46,11 @@ section1:addToggle("Auto Farm Tundra 2", nil, function(autofarmt7tog)
     autofarmt7 = autofarmt7tog
 venyx:Notify("AutoFarm Notification", "Make Sure To Have Trinket AutoPickup On")
 end)
+section1:addButton("Lag Server", function()
+game:GetService("Runservice").Heartbeat:Connect(function()
+fireclickdetector(game:GetService("Workspace").NPCs.Adralik.ClickDetector)
+end)
+end)
 section1:addButton("No Fire", function()
 while wait() do
 
