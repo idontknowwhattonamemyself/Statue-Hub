@@ -46,6 +46,14 @@ section1:addToggle("Auto Farm Tundra 7", nil, function(autofarmt7tog)
     autofarmt7 = autofarmt7tog
 venyx:Notify("AutoFarm Notification", "Make Sure To Have Trinket AutoPickup On")
 end)
+section1:addButton("No Fire", function()
+while wait() do
+
+ if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Burning") and game:GetService("Players").LocalPlayer.Character then
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.Dodge:FireServer()
+end
+end
+end)
 section1:addButton("Auto Trinket Pickup", function()
     
     while wait(2) do
@@ -57,12 +65,6 @@ for i, v in pairs(game:GetService("Workspace").Trinkets:GetDescendants()) do
 end
 end
 
-end)
-section1:addButton("No Orderly Barriers", function()
-	for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
-		if v.Name == "OrderField" then v:remove()
-		end
-	end
 end)
 section1:addButton("Full Bright", function()
 local Lighting = game:GetService("Lighting")
