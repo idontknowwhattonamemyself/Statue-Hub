@@ -42,7 +42,18 @@ game:GetService'RunService'.RenderStepped:Connect(function()
         Player.Character.HumanoidRootPart.Velocity = Player.Character.HumanoidRootPart.CFrame.LookVector * Speed;
     end;
 end)
+section1:addButton("Full Bright", function()
+local Lighting = game:GetService("Lighting")
+local function brightFunc()
+		Lighting.Brightness = 2
+		Lighting.ClockTime = 14
+		Lighting.FogEnd = 100000
+		Lighting.GlobalShadows = false
+		Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+	end
 
+	game:GetService("RunService").RenderStepped:Connect(brightFunc)
+end)
 section1:addButton("No Fall", function()
     if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("ApplyFallDamage") then
     game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.ApplyFallDamage:remove()
@@ -132,7 +143,7 @@ for i, v in pairs(game:GetService("Workspace").Live:GetDescendants()) do
 end
 end
 if augahghagw == true then
-  venyx:Notify("Illusionist In Server", "Be Careful!          ")
+  venyx:Notify("Illusionist In Server", "Be Careful!      ")
   end
 end
 
