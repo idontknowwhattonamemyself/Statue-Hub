@@ -102,7 +102,7 @@ for theme, color in pairs(themes) do -- all in one theme changer, i know, im coo
 		venyx:setTheme(theme, color3)
 	end)
 end
-while wait(1) do
+while wait() do
     if AutoFarmsrc == true then
 
 
