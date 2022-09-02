@@ -51,6 +51,17 @@ game:GetService("RunService").Heartbeat:Connect(function()
 fireclickdetector(game:GetService("Workspace").NPCs.Adralik.ClickDetector)
 end)
 end)
+section1:addButton("Temp Lock", function()
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    local args = {
+    [1] = "Cardinal Crossing"
+}
+
+game:GetService("ReplicatedStorage").Requests.SetCurrentArea:FireServer(unpack(args))
+
+    end)
+end)
 section1:addButton("No Fire", function()
 while wait() do
 
@@ -212,18 +223,9 @@ if autofarmt7 == true then
 local teleport_table = {
     location1 = Vector3.new(3976, 439, -786),
     location2 = Vector3.new(3991, 439, -1014),
-    location3 = Vector3.new(4021, 439, -1015),
+    location3 = Vector3.new(4021, 439, -1015)
     
-     location4 = Vector3.new(4790, 689, 1650),
-      
-     location5 = Vector3.new(4763, 690, 1730),
-     location6 = Vector3.new(4711, 691, 1764),
-     location7 = Vector3.new(4656, 691, 1768),
-     location8 = Vector3.new(4618, 689, 1742),
-     location9 = Vector3.new(4607, 691, 1702),
-     location10 = Vector3.new(4613, 688, 1591),
-     location11 = Vector3.new(4610, 688, 1532),
-          location12 = Vector3.new(4650, 688, 1730)
+
   
 
      
@@ -249,16 +251,21 @@ function bypass_teleport(v)
 bypass_teleport(teleport_table.location1)
 wait(5)
 bypass_teleport(teleport_table.location2)
+
+
 wait(2)
 bypass_teleport(teleport_table.location3)
+ 
+        
+
 wait(2)
-repeat wait() until lp.Character
+
+
+
+
 
 end
 end
-
-
-
 
     
 -- load
