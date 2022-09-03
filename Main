@@ -24,7 +24,7 @@ if game.PlaceId == 8704181738 then
 	section1:addButton("Extend Hitboxes", function()
 		while wait(1) do
 	
-		
+		if game:GetService("Players").LocalPlayer.Character then
 			for i ,v in pairs(game:GetService("Workspace"):GetDescendants()) do 
 		if v.Name == "HumanoidRootPart" and v.Parent:FindFirstChild("Humanoid") and v ~= game:GetService("Players").LocalPlayer.Character.HumanoidRootPart then
 			v.Size = Vector3.new(20, 20, 20)
@@ -34,6 +34,8 @@ if game.PlaceId == 8704181738 then
 		end
 		end
 		end
+	end
+	
 	end)
 	section1:addButton("Auto Attack", function()
 		while wait() do
