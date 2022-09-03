@@ -52,6 +52,12 @@ if game.PlaceId == 8704181738 then
 			end
 			end
 	end)
+	section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
+
+	venyx:toggle()
+end, function()
+
+end)
 	-- second page
 	local theme = venyx:addPage("Theme", 5012544693)
 	local colors = theme:addSection("Colors")
