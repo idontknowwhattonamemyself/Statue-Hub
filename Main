@@ -37,6 +37,13 @@ if game.PlaceId == 8704181738 then
 	end
 	
 	end)
+		section1:addButton("Auto Gacha", function()
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    fireclickdetector(game:GetService("Workspace").BMP.ClickPart.ClickDetector)
+end)
+
+end)
 	section1:addButton("Auto Melee Stat", function()
 		game:GetService("RunService").Heartbeat:Connect(function()
 local args = {
