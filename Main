@@ -22,7 +22,7 @@ local section1 = page:addSection("Main")
 getgenv().Toggled = false;
 local Player = game:GetService('Players').LocalPlayer;
 local Camera = workspace.Camera;
-local FlySpeed = 250;
+local FlySpeed = 150;
 local autofarmt7 = false
 game:GetService'RunService'.RenderStepped:Connect(function()
     if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
@@ -35,7 +35,7 @@ end)
 
 getgenv().AutowalkToggled = false;
 local autopickup = false
-local Speed = 200;
+local Speed = 150;
 wait(.5)
 game:GetService'RunService'.RenderStepped:Connect(function()
     if (getgenv().AutowalkToggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
