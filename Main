@@ -17,8 +17,9 @@ if game.PlaceId == 8704181738 then
 	-- first page
 	local page = venyx:addPage("Tien Tien Piece", 5012544693)
 	local section1 = page:addSection("Character Mods")
+	local section2 = page:addSection("Automation")
 	
-	section1:addToggle("Spell Spam", nil, function(spellspamtog)
+	section2:addToggle("Auto Skill", nil, function(spellspamtog)
 		spellspam = spellspamtog
 	end)
 	section1:addButton("Extend Hitboxes", function()
@@ -37,14 +38,14 @@ if game.PlaceId == 8704181738 then
 	end
 	
 	end)
-		section1:addButton("Auto Gacha", function()
+		section2:addButton("Auto Gacha", function()
 
 game:GetService("RunService").Heartbeat:Connect(function()
     fireclickdetector(game:GetService("Workspace").BMP.ClickPart.ClickDetector)
 end)
 
 end)
-	section1:addButton("Auto Melee Stat", function()
+	section2:addButton("Auto Melee Stat", function()
 		game:GetService("RunService").Heartbeat:Connect(function()
 local args = {
     [1] = "Melee"
@@ -54,7 +55,7 @@ game:GetService("ReplicatedStorage").StatSystem.Points:FireServer(unpack(args))
 
 end)
 	end)
-	section1:addButton("Auto Attack", function()
+	section2:addButton("Auto Attack", function()
 		while wait() do
 			if game:GetService('Players').LocalPlayer.Character then
 			for i, v in pairs(game:GetService('Players').LocalPlayer.Character:GetDescendants()) do
