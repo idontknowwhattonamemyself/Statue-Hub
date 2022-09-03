@@ -37,6 +37,16 @@ if game.PlaceId == 8704181738 then
 	end
 	
 	end)
+	section1:addButton("Auto Melee Stat", function()
+		while wait() do
+			local args = {
+				[1] = "Melee"
+			}
+			
+			game:GetService("ReplicatedStorage").StatSystem.Points:FireServer(unpack(args))
+			
+			end
+	end)
 	section1:addButton("Auto Attack", function()
 		while wait() do
 			if game:GetService('Players').LocalPlayer.Character then
