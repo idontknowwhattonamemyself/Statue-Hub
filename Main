@@ -284,8 +284,10 @@ end)
 section1:addTextbox("Spectate", "Name", function(playername, focusLost)
 
 	if focusLost then
-		if game:GetService("Players"):FindFirstChild(playername) then
+	    
+		if game:GetService("Players"):FindFirstChild(playername) and game:GetService("Players"):FindFirstChild(playername).Character then
 game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players"):FindFirstChild(playername).Character
+
 end
 	end
 end)
