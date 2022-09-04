@@ -215,6 +215,59 @@ local Player = game:GetService('Players').LocalPlayer;
 local Camera = workspace.Camera;
 local FlySpeed = 150;
 local autofarmt7 = false
+local UIS = game:GetService("UserInputService")
+local holdingWKey = false
+local holdingSKey = false
+
+
+
+UIS.InputBegan:Connect(function(inputObject) 
+    if(inputObject.KeyCode==Enum.KeyCode.W)then
+        holdingWKey = true
+
+    end
+end)
+
+UIS.InputEnded:Connect(function(inputObject)
+    if(inputObject.KeyCode==Enum.KeyCode.W)then
+        holdingWKey = false
+    end
+end)
+
+
+UIS.InputBegan:Connect(function(inputObject) 
+    if(inputObject.KeyCode==Enum.KeyCode.S)then
+        holdingSKey = true
+
+    end
+end)
+
+UIS.InputEnded:Connect(function(inputObject)
+    if(inputObject.KeyCode==Enum.KeyCode.S)then
+        holdingSKey = false
+    end
+end)
+
+
+
+
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+if holdingWKey == true then
+Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+end
+if holdingSKey == true then
+  Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed * -1;
+
+end
+
+if holdingSKey == false and holdingWKey == false then
+    Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+end
+end
+
+end)
+
 game:GetService'RunService'.RenderStepped:Connect(function()
     if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
         Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
