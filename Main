@@ -237,6 +237,7 @@ section1:addToggle("Auto Farm Tundra 2", nil, function(autofarmt7tog)
     autofarmt7 = autofarmt7tog
 venyx:Notify("AutoFarm Notification", "Make Sure To Have Trinket AutoPickup On")
 end)
+
 section1:addButton("Lag Server (requires gate)", function()
 game:GetService("RunService").Heartbeat:Connect(function()
 fireclickdetector(game:GetService("Workspace").NPCs.Adralik.ClickDetector)
@@ -279,6 +280,14 @@ while wait() do
 game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.Dodge:FireServer()
 end
 end
+end)
+section1:addTextbox("Spectate", "Name", function(playername, focusLost)
+
+	if focusLost then
+		if game:GetService("Players"):FindFirstChild(playername) then
+game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players"):FindFirstChild(playername).Character
+end
+	end
 end)
 section1:addButton("No Orderly Barriers", function()
     for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
@@ -334,7 +343,7 @@ end)
 
 
 section1:addButton("No Kill Bricks", function()
-    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Fire" and v.Parent.Name ~= "Tenebris" then do 
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Fire" then do 
  
   
     v.CFrame = CFrame.new(6900000,690000,690000)
