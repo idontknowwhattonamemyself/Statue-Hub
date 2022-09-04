@@ -304,12 +304,13 @@ section1:addButton("No Vamp Burn", function()
 
 end)
 section1:addButton("Full Bright", function()
-	local lchildren = game:GetService("Lighting"):GetChildren()
-	for i, v in pairs(lchildren) do
-		v:remove()
-			end
+	
 	local Lighting = game:GetService("Lighting")
 local function brightFunc()
+    local lchildren = game:GetService("Lighting"):GetChildren()
+	for i, v in pairs(lchildren) do
+		v:remove()
+	end
         game:GetService("Lighting").GlobalShadows = false
         
 		Lighting.Brightness = 2
