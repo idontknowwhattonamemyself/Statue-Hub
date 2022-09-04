@@ -334,7 +334,7 @@ end)
 
 
 section1:addButton("No Kill Bricks", function()
-    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Fire" then do 
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Fire" and v.Parent.Name ~= "Tenebris" then do 
  
   
     v.CFrame = CFrame.new(6900000,690000,690000)
