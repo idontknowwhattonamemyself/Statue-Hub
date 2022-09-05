@@ -392,8 +392,8 @@ for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
 	game:GetService("RunService").Heartbeat:Connect(brightFunc)
 end)
 section1:addButton("No Fall", function()
-    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("ApplyFallDamage") then
-    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.ApplyFallDamage:remove()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("FallDamage") then
+    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.FallDamage:remove()
     end
 end)
 
