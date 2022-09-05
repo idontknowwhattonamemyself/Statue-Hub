@@ -65,8 +65,8 @@ end)
 	
 	-- load
 	venyx:SelectPage(venyx.pages[1], true)
-	end
-	wait(.2)
+end
+wait(1)
 if game.PlaceId == 8704181738 then
 
 	-- init
