@@ -496,7 +496,7 @@ section1:addButton("Respawn", function()
     game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
 end)
 section1:addButton("Rejoin", function()
-    game:GetService("TeleportService"):Teleport(9963328741)
+    game:GetService("TeleportService"):Teleport(10829443763)
     end)
 
 
