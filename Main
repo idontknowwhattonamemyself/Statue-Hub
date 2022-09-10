@@ -203,6 +203,9 @@ section1:addButton("No Fall", function()
     if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("FallDamage") then
     game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.FallDamage:remove()
     end
+   if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("ApplyFallDamage") then
+    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.ApplyFallDamage:remove()
+    end
 end)
 
 
