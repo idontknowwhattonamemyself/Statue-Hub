@@ -190,7 +190,7 @@ end)
 	-- load
 	venyx:SelectPage(venyx.pages[1], true)
 	end
-if game.PlaceId == 10829443763 then
+if game.PlaceId == 10858274778 then
     local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("Statue Hub", 5013109572)
 
