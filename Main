@@ -1,3 +1,389 @@
+if game.PlaceId == 10596950867 then
+    local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Statue Hub", 5013109572)
+
+-- themes
+local themes = {
+	Background = Color3.fromRGB(24, 24, 24),
+	Glow = Color3.fromRGB(0, 0, 0),
+	Accent = Color3.fromRGB(10, 10, 10),
+	LightContrast = Color3.fromRGB(20, 20, 20),
+	DarkContrast = Color3.fromRGB(14, 14, 14),  
+	TextColor = Color3.fromRGB(255, 255, 255)
+}
+
+-- first page
+
+
+
+
+local page = venyx:addPage("Rogue Lineage Obby", 5012544693)
+local section1 = page:addSection("Main")
+getgenv().Toggled = false;
+local Player = game:GetService('Players').LocalPlayer;
+local Camera = workspace.Camera;
+local FlySpeed = 150;
+local autofarmt7 = false
+local UIS = game:GetService("UserInputService")
+local holdingWKey = false
+local holdingSKey = false
+
+
+
+UIS.InputBegan:Connect(function(inputObject) 
+    if(inputObject.KeyCode==Enum.KeyCode.W)then
+        holdingWKey = true
+
+    end
+end)
+
+UIS.InputEnded:Connect(function(inputObject)
+    if(inputObject.KeyCode==Enum.KeyCode.W)then
+        holdingWKey = false
+    end
+end)
+
+
+UIS.InputBegan:Connect(function(inputObject) 
+    if(inputObject.KeyCode==Enum.KeyCode.S)then
+        holdingSKey = true
+
+    end
+end)
+
+UIS.InputEnded:Connect(function(inputObject)
+    if(inputObject.KeyCode==Enum.KeyCode.S)then
+        holdingSKey = false
+    end
+end)
+
+
+
+
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+if holdingWKey == true then
+Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+end
+if holdingSKey == true then
+  Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed * -1;
+
+end
+
+if holdingSKey == false and holdingWKey == false then
+    Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+end
+end
+
+end)
+
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+        Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+    end;
+end)
+
+
+
+
+getgenv().AutowalkToggled = false;
+local autopickup = false
+local Speed = 150;
+wait(.5)
+game:GetService'RunService'.RenderStepped:Connect(function()
+    if (getgenv().AutowalkToggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+        Player.Character.HumanoidRootPart.Velocity = Player.Character.HumanoidRootPart.CFrame.LookVector * Speed;
+    end;
+end)
+section1:addToggle("Auto Farm Tundra 2", nil, function(autofarmt7tog)
+    autofarmt7 = autofarmt7tog
+venyx:Notify("AutoFarm Notification", "Make Sure To Have Trinket AutoPickup On")
+end)
+
+section1:addButton("Lag Server (requires gate)", function()
+game:GetService("RunService").Heartbeat:Connect(function()
+fireclickdetector(game:GetService("Workspace").NPCs.Adralik.ClickDetector)
+end)
+end)
+section1:addKeybind("Fly", Enum.KeyCode.Z, function()
+getgenv().Toggled = not getgenv().Toggled
+	
+end, function()
+
+end)
+section1:addSlider("FlySpeed", 1, 1, 200, function(value)
+FlySpeed = value
+end)
+section1:addKeybind("Speed", Enum.KeyCode.X, function()
+getgenv().AutowalkToggled = not getgenv().AutowalkToggled
+	
+end, function()
+
+end)
+
+section1:addSlider("WalkSpeed", 1, 1, 200, function(speedvalue)
+Speed = speedvalue
+end)
+section1:addButton("Temp Lock", function()
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    local args = {
+    [1] = "Cardinal Crossing"
+}
+
+game:GetService("ReplicatedStorage").Requests.SetCurrentArea:FireServer(unpack(args))
+
+    end)
+end)
+section1:addButton("No Fire", function()
+while wait() do
+
+ if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Burning") and game:GetService("Players").LocalPlayer.Character then
+game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.Dodge:FireServer()
+end
+end
+end)
+section1:addTextbox("Spectate", "Name", function(playername, focusLost)
+
+	if focusLost then
+	    
+		if game:GetService("Players"):FindFirstChild(playername) and game:GetService("Players"):FindFirstChild(playername).Character then
+game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players"):FindFirstChild(playername).Character
+
+end
+	end
+end)
+section1:addButton("No Orderly Barriers", function()
+    for i, v in pairs(game:GetService("Workspace").Map:GetDescendants()) do
+        if v.Name == "OrderField" then
+            v:remove()
+            end
+        end
+end)
+section1:addButton("Auto Trinket Pickup", function()
+    
+    while wait(2) do
+for i, v in pairs(game:GetService("Workspace").Trinkets:GetDescendants()) do
+    if v.ClassName == "ClickDetector" then 
+        
+        fireclickdetector(v)
+    end
+end
+end
+
+end)
+section1:addButton("No Vamp Burn", function()
+	game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.SunBurn:remove()
+
+end)
+section1:addButton("Full Bright", function()
+	
+	local Lighting = game:GetService("Lighting")
+local function brightFunc()
+    local lchildren = game:GetService("Lighting"):GetChildren()
+	for i, v in pairs(lchildren) do
+		v:remove()
+	end
+        game:GetService("Lighting").GlobalShadows = false
+        
+		Lighting.Brightness = 2
+		Lighting.ClockTime = 14
+		Lighting.FogEnd = 9e9
+		Lighting.GlobalShadows = false
+		Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
+	end
+for i, v in pairs(game:GetService("Lighting"):GetDescendants()) do
+            if v.Parent == "Lighting" then
+                v:remove()
+    end
+        end
+	game:GetService("RunService").Heartbeat:Connect(brightFunc)
+end)
+section1:addButton("No Fall", function()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes:FindFirstChild("FallDamage") then
+    game:GetService("Players").LocalPlayer.Character.CharacterHandler.Remotes.FallDamage:remove()
+    end
+end)
+
+
+section1:addButton("No Kill Bricks", function()
+    for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Fire" then do 
+ 
+  
+    v.CFrame = CFrame.new(6900000,690000,690000)
+
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "KillBrick" then do 
+ 
+  
+    v.CFrame = CFrame.new(6900000,690000,690000)
+
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "ArdorianKillBrick" then do
+   
+    v.CFrame = CFrame.new(6900000,690000,690000)
+    
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "ArdorianKillbrick" then do
+   
+    v.CFrame = CFrame.new(6900000,690000,690000)
+    
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "Lava" then do
+   
+    v.CFrame = CFrame.new(6900000,690000,690000)
+    
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "PitKillBrick" then do
+  
+    v.CFrame = CFrame.new(6900000,690000,690000)
+   
+end
+end
+end
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do if v.Name == "KillFire" then do
+  local replacement = Instance.new('Part')
+  replacement.Parent = game:GetService("Workspace")
+  replacement.Name = "replacement"
+  replacement.Position = Vector3.new(1448, -566, -5822)
+  replacement.Anchored = true
+  replacement.Size = Vector3.new(500,2,500)
+   local replacement1 = Instance.new('Part')
+  replacement1.Parent = game:GetService("Workspace")
+  replacement1.Name = "replacement1"
+  replacement1.Position = Vector3.new(1695, -43, -2486.5)
+  replacement1.Anchored = true
+  replacement1.Size = Vector3.new(2048,2,1719)
+   local replacement2 = Instance.new('Part')
+  replacement2.Parent = game:GetService("Workspace")
+  replacement2.Name = "replacement2"
+  replacement2.Position = Vector3.new(2747, -43, -2486.5)
+  replacement2.Anchored = true
+  replacement2.Size = Vector3.new(2048,2,1719)
+  --3283, -43, -2263
+    v.CFrame = CFrame.new(6900000,690000,690000)
+   
+end
+end
+end
+end)
+    section1:addButton("Illu Detector", function()
+while wait(6) do
+    
+for i, v in pairs(game:GetService("Players"):GetDescendants()) do
+    if v.Name == "Observe" then
+       
+        augahghagw = true
+    
+end
+end
+for i, v in pairs(game:GetService("Workspace").Live:GetDescendants()) do
+    if v.Name == "Observe" then
+       
+        augahghagw = true
+
+
+end
+end
+if augahghagw == true then
+  venyx:Notify("Illusionist In Server", "Be Careful!      ")
+  end
+end
+end)
+section1:addButton("Respawn", function()
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+end)
+section1:addButton("Rejoin", function()
+    game:GetService("TeleportService"):Teleport(10829443763)
+    end)
+
+
+    
+
+
+section1:addKeybind("Hide/Show GUI", Enum.KeyCode.LeftAlt, function()
+
+	venyx:toggle()
+end, function()
+
+end)
+
+-- second page
+local theme = venyx:addPage("Theme", 5012544693)
+local colors = theme:addSection("Colors")
+
+for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
+	colors:addColorPicker(theme, color, function(color3)
+		venyx:setTheme(theme, color3)
+	end)
+end
+while wait() do
+if autofarmt7 == true then
+  
+local teleport_table = {
+    location1 = Vector3.new(3976, 439, -786),
+    location2 = Vector3.new(3991, 439, -1014),
+    location3 = Vector3.new(4021, 439, -1015)
+    
+
+  
+
+     
+}
+
+local tween_s = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new(1,Enum.EasingStyle.Linear)
+local lp = game:GetService("Players").LocalPlayer
+function bypass_teleport(v)
+    if lp.Character and
+    lp.Character:FindFirstChild("HumanoidRootPart") then
+        local antifall = Instance.new("BodyVelocity")
+        antifall.velocity = Vector3.new(0,0,0)
+        antifall.Parent = lp.Character.HumanoidRootPart
+        local cf = CFrame.new(v)
+        local a = tween_s:Create(lp.Character.HumanoidRootPart, tweeninfo, {CFrame=cf})
+        a:Play()
+        a.Completed:wait()
+        antifall:remove()
+    end
+ end
+
+bypass_teleport(teleport_table.location1)
+wait(5)
+bypass_teleport(teleport_table.location2)
+
+
+wait(2)
+bypass_teleport(teleport_table.location3)
+ 
+        
+
+wait(2)
+
+
+
+
+
+end
+end
+
+    
+-- load
+venyx:SelectPage(venyx.pages[1], true)
+
+
+
+end
 if game.PlaceId == 3652625463 then
 wait(2)
 	-- init
