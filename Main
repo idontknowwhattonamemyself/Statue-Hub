@@ -26,6 +26,7 @@ end
 end)
 
 game:GetService("RunService").RenderStepped:Connect(function()
+    wait(.4)
     if autoclick ==  true then
     game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickerService.RF.DoClick:InvokeServer()
 end
@@ -47,7 +48,11 @@ autoexchange = aetog
 		section1:addToggle("NFT Sniper", nil, function(nftog)
 			nftsniper = nftog
 		end)
-		
+		section1:addSlider("WalkSpeed", 0, 1, 200, function(value)
+if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid then
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
+end
+end)
 	
 	
 	
