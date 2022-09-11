@@ -47,9 +47,7 @@ autoexchange = aetog
 		section1:addToggle("NFT Sniper", nil, function(nftog)
 			nftsniper = nftog
 		end)
-		section1:addSlider("Exchange Frequency", 0, 1, 30, function(value)
-excfq = value
-end)
+		
 	
 	
 	
@@ -95,6 +93,8 @@ end)
 		-- load
 		venyx:SelectPage(venyx.pages[1], true)
 	end
+
+
 
 
 
