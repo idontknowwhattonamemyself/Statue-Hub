@@ -520,7 +520,9 @@ wait(2)
 	}
 	
 local lp = game:GetService("Players").LocalPlayer
+wait()
 game:GetService("RunService").RenderStepped:Connect(function()
+    
 if af == true then
 	local args = {
     [1] = {
@@ -543,7 +545,7 @@ end)
 	
 	local section1 = page:addSection("Automation")
 	
-	section2:addToggle("Auto Skill", nil, function(aftog)
+	section1:addToggle("Auto Farm", nil, function(aftog)
 		af = aftog
 	end)
 	section1:addButton("Buy Gui", function()
