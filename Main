@@ -1,5 +1,4 @@
 
-
 if game.PlaceId == 9328724748 then
 	wait(1)
 		-- init
@@ -47,7 +46,7 @@ autoexchange = aetog
 		section1:addToggle("Auto Click", nil, function(aftog)
 			autoclick = aftog
 		end)
-		section1:addToggle("NFT Sniper", nil, function(nftog)
+		section1:addToggle("NFT Sniper (Horribly Optimized btw)", nil, function(nftog)
 			nftsniper = nftog
 		end)
 		section1:addSlider("WalkSpeed", 0, 1, 200, function(value)
@@ -106,6 +105,8 @@ end)
 		-- load
 		venyx:SelectPage(venyx.pages[1], true)
 	end
+
+
 
 
 
