@@ -1,7 +1,6 @@
-wait(.5)
+
 if game.PlaceId == 10347946161 then
-    
-local autosell = false
+    local autosell = false
     local AutoBuy = false
     game:GetService("RunService").RenderStepped:Connect(function()
         if autosell == true then
@@ -33,6 +32,8 @@ if AutoBuy == true then
     if game:GetService("CoreGui"):FindFirstChild("PurchasePrompt") then
         game:GetService("CoreGui").PurchasePrompt:remove()
         end
+        if game:GetService("Players").LocalPlayer.Character then
+
     local head = game:GetService("Players").LocalPlayer.Character.Head
     for i, v in pairs(game:GetService("Workspace").Tycoons:GetDescendants()) do if v.Name == "Hitbox" then
         firetouchinterest(v, head, 0)
@@ -40,21 +41,25 @@ if AutoBuy == true then
     end
     end
 end
+end
 
 end)
     game:GetService("RunService").RenderStepped:Connect(function()
         if AutoCollect == true then
+                if game:GetService("Players").LocalPlayer.Character then
+
         for i, v in pairs(game:GetService("Workspace").Tycoons:GetDescendants()) do
           if v.Parent.Name == "Rats" and v.ClassName == "Model" then 
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Part.Position)
           end
-          
+        end
+    
         
             end
         end
         end)
 		-- first page
-		local page = venyx:addPage("Rat Washing Tycoon", 5012544693)
+		local page = venyx:addPage("Crypto Tycoon", 5012544693)
 		
 		local section1 = page:addSection("Automation")
 				local section2 = page:addSection("Misc")
@@ -2001,11 +2006,16 @@ game:GetService("CoreGui").PurchasePrompt:remove()
 end)
 section1:addButton("Auto Collect", function()
 	while wait(.5) do
+        if game:GetService("Players").LocalPlayer.Character then
+
 local Playerhead = game:GetService("Players").LocalPlayer.Character.Head
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+
+
     if v.Name == "TouchInterest" and v.Parent.Name == "Part" then
  firetouchinterest(v.Parent, Playerhead, 1)
 firetouchinterest(v.Parent, Playerhead, 0)
+end
 end
 end
 end
@@ -2014,9 +2024,12 @@ section1:addButton("Auto Buy", function()
 while wait(.5) do
     local Playerhead = game:GetService("Players").LocalPlayer.Character.Head
 for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if game:GetService("Players").LocalPlayer.Character then
+
 if v.Name == "Price" then
     firetouchinterest(v.Parent.Parent, Playerhead, 0)
     firetouchinterest(v.Parent.Parent, Playerhead, 1)
+end
 end
 end
 end
