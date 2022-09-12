@@ -2540,11 +2540,9 @@ Players.LocalPlayer.Idled:Connect(function()
 	local room = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
 	
 	local diff = ChaseStart-room
-	local diff
+
 	if diff > 0 then
 	venyx:Notify("Chase In Room", ChaseStart)
-	elseif diff == 0 then
-		venyx:Notify("Chase Has Spawned!","Make Sure To Hide In A Closet As Soon As Possible")
 	end
 	end)
 	-- first page
