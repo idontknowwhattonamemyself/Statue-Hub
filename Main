@@ -2617,11 +2617,12 @@ Players.LocalPlayer.Idled:Connect(function()
 			local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name)
 					
 					end
-			if latest.Parent.Name == "50" then
-				print("ran")
-				 latest = game:GetService("Workspace").CurrentRooms:FindFirstChild("51").RoomEnd
-				 game:GetService("Workspace").CurrentRooms:FindFirstChild("52"):WaitForChild("RoomEnd")
-			end
+					if latest.Parent.Name == "50" then
+						print("ran")
+						 latest = game:GetService("Workspace").CurrentRooms:FindFirstChild("51").Door
+						 wait(1.5)
+						
+					end
 			if game:GetService("Workspace"):FindFirstChild("RushMoving") then
 				local Players = game:GetService("Players")
 			
@@ -2704,11 +2705,12 @@ Players.LocalPlayer.Idled:Connect(function()
 			local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name)
 					
 					end
-			if latest.Parent.Name == "50" then
-				print("ran")
-				 latest = game:GetService("Workspace").CurrentRooms:FindFirstChild("51").RoomEnd
-				 game:GetService("Workspace").CurrentRooms:FindFirstChild("52"):WaitForChild("RoomEnd")
-			end
+					if latest.Parent.Name == "50" then
+						print("ran")
+						 latest = game:GetService("Workspace").CurrentRooms:FindFirstChild("51").Door
+						 wait(1.5)
+						
+					end
 		
 		
 				local Players = game:GetService("Players")
