@@ -2664,7 +2664,7 @@ Players.LocalPlayer.Idled:Connect(function()
     
 			local name = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
 			
-			local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name).Door
+			local latest = game:GetService("Workspace").CurrentRooms:FindFirstChild(name).RoomEnd
 			
 			if latest then
 				
@@ -2707,7 +2707,7 @@ Players.LocalPlayer.Idled:Connect(function()
 					end
 					if latest.Parent.Name == "50" then
 						print("ran")
-						 latest = game:GetService("Workspace").CurrentRooms:FindFirstChild("51").Door
+						 latest = game:GetService("Workspace").CurrentRooms:FindFirstChild("51").RoomEnd
 						 wait(1.5)
 						
 					end
