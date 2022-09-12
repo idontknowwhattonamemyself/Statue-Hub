@@ -20,6 +20,12 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
+		local Players = game:GetService("Players")
+Players.LocalPlayer.Idled:Connect(function()
+			local VirtualUser = game:GetService("VirtualUser")
+			VirtualUser:CaptureController()
+			VirtualUser:ClickButton2(Vector2.new())
+		end)
 	wait(.5)
 	if game.PlaceId == 10347946161 then
 	
