@@ -118,6 +118,7 @@ if syn then
 			-- load
 			venyx:SelectPage(venyx.pages[1], true)
 		end
+		wait(1)
 	if game.PlaceId == 10347946161 then
 		local autosell = false
 		local AutoBuy = false
