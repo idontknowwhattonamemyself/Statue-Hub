@@ -20,11 +20,18 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
+				local Players = game:GetService("Players")
+Players.LocalPlayer.Idled:Connect(function()
+			local VirtualUser = game:GetService("VirtualUser")
+			VirtualUser:CaptureController()
+			VirtualUser:ClickButton2(Vector2.new())
+		end)
+	wait(.5)
 if game.PlaceId == 9648883891 then
-	
+	wait(2)
 
 	
-			wait(1)
+			
 			-- init
 			local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 			local venyx = library.new("Statue Hub", 5013109572)
@@ -43,7 +50,7 @@ if game.PlaceId == 9648883891 then
 		local lp = game:GetService("Players").LocalPlayer
 	
         game:GetService("RunService").RenderStepped:Connect(function()
-			if ab == true then
+			if ab == true and task.wait() then
                 for i, v in pairs(game:GetService("Workspace").Buttons:GetDescendants()) do if v.Parent.Parent.Name == "Buttons" then 
                     local args = {
                         [1] = v.Name
@@ -133,13 +140,7 @@ if game.PlaceId == 9648883891 then
 			-- load
 			venyx:SelectPage(venyx.pages[1], true)
 		end
-		local Players = game:GetService("Players")
-Players.LocalPlayer.Idled:Connect(function()
-			local VirtualUser = game:GetService("VirtualUser")
-			VirtualUser:CaptureController()
-			VirtualUser:ClickButton2(Vector2.new())
-		end)
-	wait(.5)
+
 	if game.PlaceId == 10347946161 then
 	
 	local autosell = false
