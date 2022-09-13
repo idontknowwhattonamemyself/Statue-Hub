@@ -151,48 +151,7 @@ game:GetService("Players").LocalPlayer.Character.Moving.VFX.DashEffect:FireServe
 end
 end)
 end
-if(gameid == 9285238704) then
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Statue Hub (Imported From Nic Hub)", "Ocean")
-    local Tab = Window:NewTab("Race Clicker")
-local Section = Tab:NewSection("Automatics")
-
-Section:NewButton("Insta Win", "Instantly Wins The Race", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-441061, 85, 35053)
-end)    
-end
-if(gameid == 10108131074) then
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Statue Hub (Imported From Nic Hub)", "Ocean")
-local Tab = Window:NewTab("Mow The Lawn")
-local Teleports = Window:NewTab("Supported Games")
-local TeleportSection = Teleports:NewSection("Teleports")
-TeleportSection:NewButton("spec's utmm", "Teleports To spec's utmm", function()
-game:GetService("TeleportService"):Teleport(9088744184) 
-end)
-
-
-TeleportSection:NewButton("Race Clicker", "Teleports To Race Clicker", function()
-game:GetService("TeleportService"):Teleport(9285238704) 
-end)
-TeleportSection:NewButton("UnderTale BGs", "Teleports To undertale battlegrounds", function()
-game:GetService("TeleportService"):Teleport(8218342368) 
-end)
-TeleportSection:NewButton("Mecha Simulator", "Teleports To Mecha Simulator", function()
-game:GetService("TeleportService"):Teleport(8605603204) 
-end)
-TeleportSection:NewButton("Mow The Lawn", "Teleports To Mow The Lawn", function()
-game:GetService("TeleportService"):Teleport(10108131074) 
-end)
-TeleportSection:NewButton("Raise A Yippee", "Teleports To Raise a Yippee", function()
-game:GetService("TeleportService"):Teleport(9742783208) 
-end)
-local Section = Tab:NewSection("LocalPlayer")
-Section:NewSlider("Walkspeed", "Sets Your Character's Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
 Section:NewButton("Auto Fill Gas", "Sets Filling Gas To True", function()
     while wait() do 
         local args = {
