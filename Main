@@ -49,18 +49,7 @@ if game.PlaceId == 9648883891 then
 	
 		local lp = game:GetService("Players").LocalPlayer
 	
-        game:GetService("RunService").RenderStepped:Connect(function()
-			if ab == true and task.wait() then
-                for i, v in pairs(game:GetService("Workspace").Buttons:GetDescendants()) do if v.Parent.Parent.Name == "Buttons" then 
-                    local args = {
-                        [1] = v.Name
-                    }
-                    
-                    game:GetService("ReplicatedStorage").RemoteObjects.RequestButtonPurchase:FireServer(unpack(args))
-                    end
-                    end
-				end
-			end)
+       
 		game:GetService("RunService").RenderStepped:Connect(function()
 			if AutoCollect == true then
                 game:GetService("ReplicatedStorage").RemoteObjects.CollectedMoney:FireServer()	
@@ -77,9 +66,7 @@ if game.PlaceId == 9648883891 then
 			section1:addToggle("Auto Collect", nil, function(actog)
 				AutoCollect = actog
 			end)
-            section1:addToggle("Auto Buy", nil, function(abtog)
-				ab = abtog
-			end)
+          
             section1:addButton("Infinite Money", function()
                 local args = {
                     [1] = math.huge
@@ -87,6 +74,16 @@ if game.PlaceId == 9648883891 then
                 
                 game:GetService("ReplicatedStorage").RemoteObjects.DanceGameCash:FireServer(unpack(args))
                 
+            end)
+            section1:addButton("Auto Buy", function()
+                for i, v in pairs(game:GetService("Workspace").Buttons:GetDescendants()) do if v.Parent.Parent.Name == "Buttons" then 
+                    local args = {
+                        [1] = v.Name
+                    }
+                    
+                    game:GetService("ReplicatedStorage").RemoteObjects.RequestButtonPurchase:FireServer(unpack(args))
+                    end
+                    end
             end)
 
             section1:addButton("Auto Find Chainsmokers", function()
@@ -140,7 +137,6 @@ if game.PlaceId == 9648883891 then
 			-- load
 			venyx:SelectPage(venyx.pages[1], true)
 		end
-
 	if game.PlaceId == 10347946161 then
 	
 	local autosell = false
