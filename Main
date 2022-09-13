@@ -235,7 +235,7 @@ if game.PlaceId == 9648883891 then
 			venyx:SelectPage(venyx.pages[1], true)
 		end
 		wait(1)
-	if game.PlaceId == 10347946161 then
+	if game.PlaceId == 10325366821 then
 		local autosell = false
 		local AutoBuy = false
 		game:GetService("RunService").RenderStepped:Connect(function()
