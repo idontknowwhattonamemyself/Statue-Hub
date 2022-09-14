@@ -866,7 +866,7 @@ if game.PlaceId == 9648883891 then
 		local lp = game:GetService("Players").LocalPlayer
 	
        
-		game:GetService("RunService").RenderStepped:Connect(function()
+		game:GetService("RunService").Heartbeat:Connect(function()
 			if AutoCollect == true then
                 game:GetService("ReplicatedStorage").RemoteObjects.CollectedMoney:FireServer()	
 				end
@@ -957,7 +957,7 @@ if game.PlaceId == 9648883891 then
 	
 	local autosell = false
 		local AutoBuy = false
-		game:GetService("RunService").RenderStepped:Connect(function()
+		game:GetService("RunService").Heartbeat:Connect(function()
 			if autosell == true then
 			game:GetService("ReplicatedStorage").Knit.Services.TycoonService.RE.SellRats:FireServer()
 			end
@@ -982,7 +982,7 @@ if game.PlaceId == 9648883891 then
 	
 		local lp = game:GetService("Players").LocalPlayer
 	
-		game:GetService("RunService").RenderStepped:Connect(function()
+		game:GetService("RunService").Heartbeat:Connect(function()
 	if AutoBuy == true then
 		if game:GetService("CoreGui"):FindFirstChild("PurchasePrompt") then
 			game:GetService("CoreGui").PurchasePrompt:remove()
@@ -996,7 +996,7 @@ if game.PlaceId == 9648883891 then
 	end
 	
 	end)
-		game:GetService("RunService").RenderStepped:Connect(function()
+		game:GetService("RunService").Heartbeat:Connect(function()
 			if AutoCollect == true then
 			for i, v in pairs(game:GetService("Workspace").Tycoons:GetDescendants()) do
 			  if v.Parent.Name == "Rats" and v.ClassName == "Model" then 
@@ -1072,7 +1072,7 @@ if game.PlaceId == 9648883891 then
 			}
 			
 		local lp = game:GetService("Players").LocalPlayer
-	game:GetService("RunService").RenderStepped:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		wait(4)
 	if autoexchange == true then
 	wait(excfq)
@@ -1080,7 +1080,7 @@ if game.PlaceId == 9648883891 then
 	end
 	end)
 	
-	game:GetService("RunService").RenderStepped:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		wait(.4)
 		if autoclick ==  true then
 		game:GetService("ReplicatedStorage").Packages.Knit.Services.ClickerService.RF.DoClick:InvokeServer()
@@ -1126,7 +1126,7 @@ if game.PlaceId == 9648883891 then
 					venyx:setTheme(theme, color3)
 				end)
 			end
-			game:GetService("RunService").RenderStepped:Connect(function()
+			game:GetService("RunService").Heartbeat:Connect(function()
 			 
 		if nftsniper == true and wait(5) then
 			wait(1)
@@ -1575,7 +1575,7 @@ if game.PlaceId == 9648883891 then
 		
 	local lp = game:GetService("Players").LocalPlayer
 	wait()
-	game:GetService("RunService").RenderStepped:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 		
 	if af == true then
 		local args = {
@@ -3637,7 +3637,7 @@ if game.PlaceId == 9648883891 then
 	end)
 	
 	section1:addButton("Larger FOV", function()
-	game:GetService("RunService").RenderStepped:Connect(function()
+	game:GetService("RunService").Heartbeat:Connect(function()
 			game:GetService("Workspace").Camera.FieldOfView = 120
 			end)
 	end)
