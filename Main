@@ -36,7 +36,7 @@ local themes = {
 	DarkContrast = Color3.fromRGB(14, 14, 14),  
 	TextColor = Color3.fromRGB(255, 255, 255)
 }
-game:GetService("RunService").HeartBeat:Connect(function()
+game:GetService("RunService").Heartbeat:Connect(function()
 if autofarm == true then if game.Players.LocalPlayer.Character then
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 
