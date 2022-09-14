@@ -75,7 +75,7 @@ section2:addDropdown("Teleports", {"Floating Island","Blue Area","Red Area", "Ye
 
 if  game:GetService("Players").LocalPlayer.Character and  game:GetService("Players").LocalPlayer.Character.HumanoidRootPart then
 if tparea == "Floating Island" then
-   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(265, 31, 31)
+   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1465, 1120, 44)
 
 elseif tparea == "Blue Area" then
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(19, 31, 786)
@@ -84,14 +84,12 @@ elseif tparea == "Red Area" then
 elseif tparea == "Yellow Area" then
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(792, 31, -3)
 elseif tparea == "Spawn" then
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36, 31, -911)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4, 31, 8)
 elseif tparea == "CandyLand" then
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(86, 36, -59050)
 elseif tparea == "Mars" then
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1881, 16065, -34847)
-elseif tparea == "Spawn" then
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4, 31, 36)
-    end
+end
     end
 end)
 section2:addKeybind("Hide/Show Gui", Enum.KeyCode.LeftAlt, function()
