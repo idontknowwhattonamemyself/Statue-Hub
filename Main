@@ -3358,14 +3358,14 @@ if game.PlaceId == 9648883891 then
 
 	
 
-	local newroom = game:GetService("ReplicatedStorage").GameData.LatestRoom.Changed:Connect(function()
+	local newroom = game:GetService("ReplicatedStorage").GameData.ChaseStart.Changed:Connect(function()
 		local ChaseStart = game:GetService("ReplicatedStorage").GameData.ChaseStart.Value
 	local room = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
 	
 	local diff = ChaseStart-room
 
 	if diff > 0 then
-	venyx:Notify("Chase In Room", ChaseStart)
+	venyx:Notify("Event In Room", ChaseStart)
 	end
 	end)
 	-- first page
