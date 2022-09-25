@@ -3338,9 +3338,11 @@ if game.PlaceId == 9648883891 then
 	end
 	
 	-- init
-	
+	wait(.1)
 	local gameid = game.PlaceId
+	
 	if gameid == 6839171747 then
+	wait(2)
 	local fesp = false
 	local besp = false
 	local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
