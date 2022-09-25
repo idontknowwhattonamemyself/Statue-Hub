@@ -92,6 +92,7 @@ elseif tparea == "Mars" then
 end
     end
 end)
+
 section2:addKeybind("Hide/Show Gui", Enum.KeyCode.LeftAlt, function()
 
 	venyx:toggle()
@@ -3390,6 +3391,7 @@ if game.PlaceId == 9648883891 then
 			end
 	end
 	end)
+
 	section1:addButton("Complete Elevator Power Puzzle", function()
 		game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
 	
@@ -3650,6 +3652,13 @@ end)
 			local currentPivot = character:GetPivot()
 			character:PivotTo(currentPivot * CFrame.new(0, 0, -15))
 			end
+		
+	end, function()
+	
+	end)
+	section1:addKeybind("Noclip", Enum.KeyCode.N, function()
+game:GetService("Players").LocalPlayer.Character.Collision.CanCollide = not game:GetService("Players").LocalPlayer.Character.Collision.CanCollide
+
 		
 	end, function()
 	
