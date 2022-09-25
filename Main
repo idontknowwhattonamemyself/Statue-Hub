@@ -3361,7 +3361,7 @@ if game.PlaceId == 9648883891 then
 	
 
 	
-
+wait()
 	local newroom = game:GetService("ReplicatedStorage").GameData.ChaseStart.Changed:Connect(function()
 		local ChaseStart = game:GetService("ReplicatedStorage").GameData.ChaseStart.Value
 	local room = game:GetService("ReplicatedStorage").GameData.LatestRoom.Value
@@ -3398,6 +3398,7 @@ if game.PlaceId == 9648883891 then
 		game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
 	
 	end)
+wait()
 	section1:addButton("Auto Complete (buggy)", function()
 	
 		while wait() do
@@ -3599,6 +3600,7 @@ if game.PlaceId == 9648883891 then
 	end
 	end
 	end)
+wait(.5)
 		section1:addButton("Esp Books", function()
 
 
