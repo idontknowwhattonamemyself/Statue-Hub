@@ -3599,6 +3599,14 @@ if game.PlaceId == 9648883891 then
 	
 	game:GetService("Workspace")["Ambience_Seek"].Playing = firemusic
 	end)
+	section1:addToggle("Figure Esp", nil, function(fesptog)
+	
+	fesp = fesptog
+	end)
+	section1:addToggle("Book Esp", nil, function(besptog)
+	
+	besp = besptog
+	end)
 	
 	section:addToggle("Auto Open Doors", nil, function(autoopentog)
 	autoopen = autoopentog
@@ -3609,6 +3617,7 @@ if game.PlaceId == 9648883891 then
 			game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = value
 			
 	end)
+
 	section1:addKeybind("Tp Forward", Enum.KeyCode.T, function()
 		local Players = game:GetService("Players")
 		local player = Players.LocalPlayer
@@ -3736,7 +3745,31 @@ if game.PlaceId == 9648883891 then
 		_G.RushSpawned = false
 	end
 	end
-	
+	local besp = false
+local fesp = false
+game:GetService("RunService").Heartbeat:Connect(function()
+for i, v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
+    
+if besp == true and v.Name == "LiveHintBook" and not v:FindFirstChild("ESP") then
+local esp = Instance.new("Highlight")
+esp.Parent = v
+elseif v.Name == "LiveHintBook" and v:FindFirstChild("Highlight") and besp == false then
+    v:FindFirstChild("Highlight"):remove()
+end
+end
+end)
+game:GetService("RunService").Heartbeat:Connect(function()
+for i, v in pairs(game:GetService("Workspace").CurrentRooms:GetDescendants()) do
+    
+if fesp == true and v.Name == "FigureRagdoll" then
+local esp = Instance.new("Highlight")
+esp.Parent = v
+elseif v.Name == "FigureRagdoll" and v:FindFirstChild("Highlight") and fesp == false then
+    v:FindFirstChild("Highlight"):remove()
+end
+
+end
+end)
 	venyx:SelectPage(venyx.pages[1], true)
 	
 		
