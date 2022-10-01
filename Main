@@ -20,6 +20,21 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
+		if game.PlaceId == 9992339729 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/Nic-Hub-v2/Lua/Longest%20Answer%20Wins"))()
+elseif game.PlaceId == 10041108328 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/Nic-Hub-v2/Lua/Dark%20Life"))()
+
+
+
+elseif game.PlaceId == 10858274778 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/Nic-Hub-v2/Lua/nrl"))()
+elseif game.PlaceId == 10676523834 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/Nic-Hub-v2/Lua/Racing%20Rocket"))()
+elseif game.PlaceId == 9649680488 then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/Nic-Hub-v2/Lua/Backrooms%20Race%20Clicker"))()
+end
+
 if game.PlaceId == 2823503928  then
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local venyx = library.new("Statue Hub", 5013109572)
