@@ -24,11 +24,14 @@ if syn then
 		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Fuck You Samson Shitter 🤣🤣 SMOKING SAMSON PACK LLLLL", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 local nd = false
+local im = false
+local km = false
 local Tab = Window:MakeTab({
 	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
 Tab:AddToggle({
 	Name = "No Damage",
 	Default = false,
@@ -39,18 +42,90 @@ nd = Value
 	end  
 	
 })
+Tab:AddToggle({
+	Name = "Kill Mobs",
+	Default = false,
+	Callback = function(Value)
+
+km = Value
+
+	end  
+	
+})
+Tab:AddToggle({
+	Name = "Inf Money 🤑🤑🤑🤑",
+	Default = false,
+	Callback = function(Value)
+
+im = Value
+
+	end  
+	
+})
+
+Tab:AddDropdown({
+	Name = "Get Item",
+	Default = "1",
+	Options = {"Apple", "Banana", "Straw", "Cheese", "Hammer", "Coffee", "Bat", "Crowbar", "Slingshot"},
+	Callback = function(Value)
+	local args = {
+    [1] = Value
+}
+
+
+game:GetService("ReplicatedStorage").Remotes.TakeItem:FireServer(unpack(args))
+
+	end    
+})
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 100,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+	    
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
 game:GetService("RunService").RenderStepped:Connect(function() 
 if game:GetService("Players").LocalPlayer.Character and  game:GetService("Players").LocalPlayer.Character:FindFirstChild("HB") and nd == true then
      game:GetService("Players").LocalPlayer.Character.HB.Parent = game:GetService("Lighting")
 elseif nd == false and game:GetService("Lighting"):FindFirstChild("HB") then
      game:GetService("Lighting").HB.Parent = game:GetService("Players").LocalPlayer.Character
 end
- end)
+end)
+
 game:GetService("RunService").RenderStepped:Connect(function() 
 if game:GetService("ReplicatedStorage").Remotes.SendCount and  nd == true then
      game:GetService("Players").LocalPlayer.Character.HB.Parent = game:GetService("Lighting")
 elseif nd == false and game:GetService("StarterPlayer"):FindFirstChild("SendCount") then
      game:GetService("Lighting").HB.Parent = game:GetService("Players").LocalPlayer.Character
+end
+end)
+game:GetService("RunService").RenderStepped:Connect(function() 
+if   im == true then
+local args = {
+    [1] = "Money"
+}
+
+game:GetService("ReplicatedStorage").Remotes.TakeItem:FireServer(unpack(args))
+game:GetService("ReplicatedStorage").Remotes.CCo:FireServer()
+end
+end)
+game:GetService("RunService").RenderStepped:Connect(function() 
+if   km == true and game:GetService("Workspace").Enemies.Captain then
+for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+    local args = {
+    [1] = v,
+    [2] = workspace.Bat
+}
+
+game:GetService("ReplicatedStorage").Remotes.SendD:FireServer(unpack(args))
+
+    end
 end
  end)
 		end
