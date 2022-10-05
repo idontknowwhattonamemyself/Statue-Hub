@@ -73,6 +73,12 @@ km = Value
 	end  
 	
 })
+OrionLib:MakeNotification({
+	Name = "Script Noti",
+	Content = "Made By wowzers!#0560 on discord",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 Tab:AddToggle({
 	Name = "Inf Money 🤑🤑🤑🤑",
 	Default = false,
