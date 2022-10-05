@@ -20,6 +20,40 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
+		if game.PlaceId == 8929050629 then
+		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Fuck You Samson Shitter 🤣🤣 SMOKING SAMSON PACK LLLLL", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local nd = false
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddToggle({
+	Name = "No Damage",
+	Default = false,
+	Callback = function(Value)
+
+nd = Value
+
+	end  
+	
+})
+game:GetService("RunService").RenderStepped:Connect(function() 
+if game:GetService("Players").LocalPlayer.Character and  game:GetService("Players").LocalPlayer.Character:FindFirstChild("HB") and nd == true then
+     game:GetService("Players").LocalPlayer.Character.HB.Parent = game:GetService("Lighting")
+elseif nd == false and game:GetService("Lighting"):FindFirstChild("HB") then
+     game:GetService("Lighting").HB.Parent = game:GetService("Players").LocalPlayer.Character
+end
+ end)
+game:GetService("RunService").RenderStepped:Connect(function() 
+if game:GetService("ReplicatedStorage").Remotes.SendCount and  nd == true then
+     game:GetService("Players").LocalPlayer.Character.HB.Parent = game:GetService("Lighting")
+elseif nd == false and game:GetService("StarterPlayer"):FindFirstChild("SendCount") then
+     game:GetService("Lighting").HB.Parent = game:GetService("Players").LocalPlayer.Character
+end
+ end)
+		end
 		if game.PlaceId == 9992339729 then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/Nic-Hub-v2/Lua/Longest%20Answer%20Wins"))()
 elseif game.PlaceId == 10041108328 then
