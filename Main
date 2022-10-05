@@ -119,7 +119,7 @@ Tab:AddButton({
         counter = 0
         
         while wait(0.1)do
-         game:GetService("Players").LocalPlayeer.PlayerGui.MetnalHealth.Frame.Border.Bar.Health.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+         game:GetService("Players").LocalPlayer.PlayerGui.MetnalHealth.Frame.Border.Bar.Health.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
          
          counter = counter + 0.01
         end
