@@ -20,7 +20,7 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
-		if game.PlaceId == 8929050629 then
+		if game.PlaceId == 9000622508 then
 		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Fuck You Samson Shitter 🤣🤣 SMOKING SAMSON PACK LLLLL", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 local nd = false
