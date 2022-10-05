@@ -111,6 +111,20 @@ Tab:AddSlider({
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Value
 	end    
 })
+Tab:AddButton({
+	Name = "RGB gaming mode",
+	Callback = function()
+        function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+
+        counter = 0
+        
+        while wait(0.1)do
+         game:GetService("Players").LocalPlayeer.PlayerGui.MetnalHealth.Frame.Border.Bar.Health.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+         
+         counter = counter + 0.01
+        end
+  	end    
+})
 game:GetService("RunService").RenderStepped:Connect(function() 
 if game:GetService("Players").LocalPlayer.Character and  game:GetService("Players").LocalPlayer.Character:FindFirstChild("HB") and nd == true then
      game:GetService("Players").LocalPlayer.Character.HB.Parent = game:GetService("Lighting")
