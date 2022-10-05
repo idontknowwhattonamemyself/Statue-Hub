@@ -42,6 +42,27 @@ nd = Value
 	end  
 	
 })
+Tab:AddButton({
+	Name = "Grab Keys",
+	Callback = function()
+      		local args = {
+    [1] = "RedKey"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Key:FireServer(unpack(args))
+local args = {
+    [1] = "GreenKey"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Key:FireServer(unpack(args))
+local args = {
+    [1] = "BlueKey"
+}
+
+game:GetService("ReplicatedStorage").Remotes.Key:FireServer(unpack(args))
+
+  	end    
+})
 Tab:AddToggle({
 	Name = "Kill Mobs",
 	Default = false,
@@ -81,7 +102,7 @@ Tab:AddSlider({
 	Name = "Walkspeed",
 	Min = 0,
 	Max = 100,
-	Default = 5,
+	Default = 16,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Speed",
@@ -100,9 +121,9 @@ end)
 
 game:GetService("RunService").RenderStepped:Connect(function() 
 if game:GetService("ReplicatedStorage").Remotes.SendCount and  nd == true then
-     game:GetService("Players").LocalPlayer.Character.HB.Parent = game:GetService("Lighting")
+     game:GetService("ReplicatedStorage").Remotes.SendCount.Parent = game:GetService("StarterPlayer")
 elseif nd == false and game:GetService("StarterPlayer"):FindFirstChild("SendCount") then
-     game:GetService("Lighting").HB.Parent = game:GetService("Players").LocalPlayer.Character
+     game:GetService("StarterPlayer"):FindFirstChild("SendCount").Parent = game:GetService("ReplicatedStorage").Remotes
 end
 end)
 game:GetService("RunService").RenderStepped:Connect(function() 
