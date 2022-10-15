@@ -36,6 +36,46 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
+		if game.GameId == 3150475059 then
+		local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Statue Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Statue Hub"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddSlider({
+	Name = "Catch Hitbox",
+	Min = 0,
+	Max = 15,
+	Default = 0,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Size",
+	Callback = function(Value)
+	if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CatchLeft and game:GetService("Players").LocalPlayer.Character.CatchRight then
+game:GetService("Players").LocalPlayer.Character.CatchLeft.Size = Vector3.new(1.4, 1.65, 1.4) + Vector3.new(Value,Value,Value)
+game:GetService("Players").LocalPlayer.Character.CatchRight.Size = Vector3.new(1.4, 1.65, 1.4) + Vector3.new(Value,Value,Value)
+end
+	end    
+})
+Tab:AddToggle({
+	Name = "Visualise Hitbox",
+	Default = false,
+	Callback = function(Value)
+	    		if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CatchLeft and game:GetService("Players").LocalPlayer.Character.CatchRight and Value == false then
+game:GetService("Players").LocalPlayer.Character.CatchLeft.Transparency = 1
+game:GetService("Players").LocalPlayer.Character.CatchRight.Transparency = 1
+end
+		if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.CatchLeft and game:GetService("Players").LocalPlayer.Character.CatchRight and Value == true then
+game:GetService("Players").LocalPlayer.Character.CatchLeft.Transparency = 0.4
+game:GetService("Players").LocalPlayer.Character.CatchRight.Transparency = 0.4
+end
+	end    
+})
+		end
+		
 		if game.GameId == 3904583189 then
 local mobtable = {}
 local mobpicked
