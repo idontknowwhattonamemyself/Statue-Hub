@@ -45,6 +45,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local nk = false
 Tab:AddSlider({
 	Name = "Catch Hitbox",
 	Min = 0,
@@ -61,6 +62,14 @@ end
 	end    
 })
 Tab:AddToggle({
+	Name = "No Knock (ex: Dive)",
+	Default = false,
+	Callback = function(Value)
+	    nk = Value
+end
+})
+	
+Tab:AddToggle({
 	Name = "Visualise Hitbox",
 	Default = false,
 	Callback = function(Value)
@@ -74,6 +83,11 @@ game:GetService("Players").LocalPlayer.Character.CatchRight.Transparency = 0.4
 end
 	end    
 })
+game:GetService("RunService").RenderStepped:Connect(function()
+		if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid and nk == true then
+game:GetService("Players").LocalPlayer.Character.Humanoid.PlatformStand = false
+end
+end)
 		end
 		
 		if game.GameId == 3904583189 then
