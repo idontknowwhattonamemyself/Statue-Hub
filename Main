@@ -1,11 +1,11 @@
-local validkeys = {"rr", "areyouseriousrightneow"}
+local validkeys = {"iluvstatuesooomuch", "rr", "areyouseriousrightneow"}
 rconsoleprint("Welcome To Statue Hub ")
 rconsoleprint("Would You Like To Copy The Link To Get A Key? (y or n) ")
 local i2 = rconsoleinput()
 if i2 == "y" then
 setclipboard("https://work.ink/2mM/statuehub1")
 end
-rconsoleprint("Enter Key")
+rconsoleprint("Enter Key ")
 local input = rconsoleinput()
 if table.find(validkeys, input) then
 
