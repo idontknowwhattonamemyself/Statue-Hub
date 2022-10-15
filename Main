@@ -1,3 +1,15 @@
+local validkeys = {"iluvstatuesooomuch", "rr", "areyouseriousrightneow"}
+rconsoleprint("Welcome To Statue Hub ")
+rconsoleprint("Please Log In Or Use A Key, The Key Link Has Been Copied To You Clipboard ")
+setclipboard("https://work.ink/2mM/statuehub1")
+local input = rconsoleinput()
+if table.find(validkeys, input) then
+
+rconsoleprint("Thank You For Using Statue Hub")
+
+wait(1)
+
+rconsoleclear()
 if syn then
 	syn.request(
 	   {
@@ -4485,4 +4497,7 @@ end)
 	end
 	end
 	end
-	
+	else
+	rconsoleprint("Invalid Key.")
+	rconsoleprint("Please Reinject")
+	end
