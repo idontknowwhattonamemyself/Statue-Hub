@@ -236,7 +236,7 @@ req.FireModes.Auto = true
 req.FireModes.Explosive = true
 req.FireModes.Burst = true
 req.FireModes.Semi = true
-req.BurstShot = 50
+req.BurstShot = math.huge
 req.ExplosiveHit = true
 
 
