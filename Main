@@ -4504,4 +4504,6 @@ end)
 	else
 	rconsoleprint("Invalid Key.")
 	rconsoleprint("Please Reinject")
+    wait(1)
+    rconsoleclear()
 	end
