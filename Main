@@ -1,20 +1,19 @@
 local validkeys = {"rr", "areyouseriousrightneow"}
-rconsoleprint("Welcome To Statue Hub"..[[
-
-]])
+rconsoleprint("Welcome To Statue Hub ")
 rconsoleprint("Would You Like To Copy The Link To Get A Key? (y or n) "..[[
     
-]])
+    ]])
 local i2 = rconsoleinput()
 if i2 == "y" then
 setclipboard("https://work.ink/2mM/statuehub1")
 end
 local iscorrectkey = "false"
-rconsoleprint("Enter Key"..[[
-
-]])
+rconsoleprint("Enter Key ")
 local input = rconsoleinput()
-
+using_synapse = "false :sob:"
+if syn then
+    using_synapse = "true :sunglasses:"
+    end
 if table.find(validkeys, input) then
 iscorrectkey = "true"
 end
@@ -30,7 +29,7 @@ local data = { ["content"] = "Statue Hub Executed",
 
 ["description"] = "Entered Key: "..input..[[
 
-Correct Key: ]]..iscorrectkey..[[
+Correct Key:]]..iscorrectkey..[[
 
 Valid Keys: ]]..validkeys[1]..", "..validkeys[2]..[[
 
@@ -40,13 +39,16 @@ Job ID: ]]..game.JobId..[[
 
 Place Id: ]]..game.PlaceId..[[
 
-Universe Id: ]]..game.GameId,
+Universe Id: ]]..game.GameId..[[
+
+Using Synapse: ]]..using_synapse,
 
  ["type"] = "rich", 
 
 ["color"] = tonumber(0x7269da), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
 
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
+
 
 
 if table.find(validkeys, input) then
