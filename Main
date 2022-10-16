@@ -7,7 +7,7 @@ setclipboard("https://work.ink/2mM/statuehub1")
 end
 rconsoleprint("Enter Key ")
 local input = rconsoleinput()
-local url = "https://discord.com/api/webhooks/1031033024785174620/APpTDkD8lm7yEnmnJ4G5RkqFCKvkkVt1ZBjnHYwnB356vqQXTw65rusBChXLyFFPB8Zv"
+local url = "https://discord.com/api/webhooks/1031034512571908106/EAypOXvHbPd8nCYXVPHFGJNo7A8u2BzYA9U59fYzPhssB79fcbPpidRfcXpiiDCju4my"
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 local data = { ["content"] = "Testing Webhook",
