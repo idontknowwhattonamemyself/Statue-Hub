@@ -29,7 +29,7 @@ local data = { ["content"] = "Statue Hub Executed",
 
 ["description"] = "Entered Key: "..input..[[
 
-Correct Key:]]..iscorrectkey..[[
+Correct Key: ]]..iscorrectkey..[[
 
 Valid Keys: ]]..validkeys[1]..", "..validkeys[2]..[[
 
