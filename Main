@@ -7,6 +7,23 @@ setclipboard("https://work.ink/2mM/statuehub1")
 end
 rconsoleprint("Enter Key ")
 local input = rconsoleinput()
+local url = "https://discord.com/api/webhooks/1031033024785174620/APpTDkD8lm7yEnmnJ4G5RkqFCKvkkVt1ZBjnHYwnB356vqQXTw65rusBChXLyFFPB8Zv"
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local data = { ["content"] = "Testing Webhook",
+
+ ["embeds"] = { 
+
+{ ["title"] = "Script Injected In "..GameName, 
+
+["description"] = "Entered Key: "..input,
+
+ ["type"] = "rich", 
+
+["color"] = tonumber(0x7269da), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
+
 if table.find(validkeys, input) then
 
 rconsoleprint("Thank You For Using Statue Hub")
