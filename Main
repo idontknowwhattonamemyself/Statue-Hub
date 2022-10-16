@@ -14,7 +14,7 @@ local data = { ["content"] = "Testing Webhook",
 
  ["embeds"] = { 
 
-{ ["title"] = "Script Injected In "..GameName, 
+{ ["title"] = game:GetService("Players").LocalPlayer.Name.." Injected Script In "..GameName, 
 
 ["description"] = "Entered Key: "..input,
 
