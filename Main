@@ -17,7 +17,7 @@ if syn then
 if table.find(validkeys, input) then
 iscorrectkey = "true"
 end
-local url = ""
+local url = "https://discord.com/api/webhooks/1031290223243567245/TZchqQmrRC0JiuI7NKvRjFSDBT24_b3KOao7jWpWk4nGB7gsK4lbwlUqBOzxdeLgIRG1"
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 local data = { ["content"] = "Statue Hub Executed",
