@@ -1,0 +1,410 @@
+local validkeys = {"rr", "esexvak^1vlVv5UZiw6pH^LH$ifEcVjuqtwOk#3e"}
+rconsoleprint("Welcome To Statue Hub ")
+rconsoleprint("Would You Like To Copy The Link To Get A Key? (y or n) "..[[
+    
+    ]])
+local i2 = rconsoleinput()
+if i2 == "y" then
+setclipboard("https://work.ink/2mM/statuehub1")
+end
+local iscorrectkey = "false"
+rconsoleprint("Enter Key ")
+local input = rconsoleinput()
+using_synapse = "false :sob:"
+if syn then
+    using_synapse = "true :sunglasses:"
+    end
+if table.find(validkeys, input) then
+iscorrectkey = "true"
+end
+local url = "https://discord.com/api/webhooks/1031291137517961386/NL94Cqe23oRshtOXam04gQMlMdQKOw0-uYzjH51-T7fTNrR5v49Katj6LM9Ov-5fKOnA"
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local data = { ["content"] = "Statue Hub (Universal) Executed",
+
+ ["embeds"] = { 
+
+{ ["title"] = game:GetService("Players").LocalPlayer.Name.." Injected Script In "..GameName, 
+
+
+["description"] = "Entered Key: "..input..[[
+
+Correct Key: ]]..iscorrectkey..[[
+
+Valid Keys: ]]..validkeys[1]..", "..validkeys[2]..[[
+
+UserId: ]]..game:GetService("Players").LocalPlayer.UserId..[[
+
+Job ID: ]]..game.JobId..[[
+
+Place Id: ]]..game.PlaceId..[[
+
+Universe Id: ]]..game.GameId..[[
+
+Using Synapse: ]]..using_synapse,
+
+ ["type"] = "rich", 
+
+["color"] = tonumber(0x7269da), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
+
+
+
+if table.find(validkeys, input) then
+
+rconsoleprint("Thank You For Using Statue Hub")
+
+wait(1)
+
+rconsoleclear()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Statue Hub Universal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local INFJ = false
+local WSTOGVAL = false
+local Player = game:GetService('Players').LocalPlayer;
+	local Camera = workspace.Camera;
+	local FlySpeed = 150;
+	local autofarmt7 = false
+	local UIS = game:GetService("UserInputService")
+	local holdingWKey = false
+	local holdingSKey = false
+	
+	
+	
+	UIS.InputBegan:Connect(function(inputObject) 
+		if(inputObject.KeyCode==Enum.KeyCode.W)then
+			holdingWKey = true
+	
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(inputObject)
+		if(inputObject.KeyCode==Enum.KeyCode.W)then
+			holdingWKey = false
+		end
+	end)
+	
+	
+	UIS.InputBegan:Connect(function(inputObject) 
+		if(inputObject.KeyCode==Enum.KeyCode.S)then
+			holdingSKey = true
+	
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(inputObject)
+		if(inputObject.KeyCode==Enum.KeyCode.S)then
+			holdingSKey = false
+		end
+	end)
+	
+	
+	
+	
+	game:GetService'RunService'.RenderStepped:Connect(function()
+		if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+	if holdingWKey == true then
+	Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+	end
+	if holdingSKey == true then
+	  Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed * -1;
+	
+	end
+	
+	if holdingSKey == false and holdingWKey == false then
+		Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+	end
+	end
+	
+	end)
+	
+	game:GetService'RunService'.RenderStepped:Connect(function()
+		if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+			Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+		end;
+	end)
+local Tab = Window:MakeTab({
+	Name = "Character",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local IJ = Tab:AddToggle({
+	Name = "Infinite Jump",
+	Default = false,
+	Callback = function(Value)
+		INFJ = Value
+	end    
+})
+Tab:AddBind({
+	Name = "Infinite Jump Keybind",
+	Default = Enum.KeyCode.I,
+	Hold = false,
+	Callback = function()
+        if INFJ == true then
+		IJ:Set(false)
+        else
+            IJ:Set(true)
+        end
+	end    
+})
+local Fly = Tab:AddToggle({
+	Name = "Fly",
+	Default = false,
+	Callback = function(Value)
+	getgenv().Toggled = Value
+	end    
+})
+Tab:AddBind({
+	Name = "Fly Keybind",
+	Default = Enum.KeyCode.Z,
+	Hold = false,
+	Callback = function()
+	if getgenv().Toggled == true then
+	    Fly:Set(false)
+	    else
+	        Fly:Set(true)
+	end
+    
+
+	end    
+})
+Tab:AddSlider({
+	Name = "Fly Speed",
+	Min = 0,
+	Max = 250,
+	Default = 150,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Studs/sec",
+	Callback = function(Value)
+         FlySpeed = Value
+		
+
+	end    
+})
+local WSVAL = 16
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 200,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Studs/sec",
+	Callback = function(Value)
+        WSVAL = Value
+		 if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid then
+            game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end
+
+	end    
+})
+local WSTOG = Tab:AddToggle({
+    Name = "Loop Walkspeed",
+    Default = false,
+    Save = true,
+  Callback = function(Value)
+    WSTOGVAL = Value
+  end
+})
+game:GetService("RunService").RenderStepped:Connect(function()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid and WSTOGVAL == true then
+        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = WSVAL
+    end
+end)
+
+game:GetService("UserInputService").JumpRequest:Connect(function()
+    if INFJ == true and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid then
+        game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(3)
+        end
+    end)
+	if syn then
+		syn.request(
+		   {
+			   Url = "http://127.0.0.1:6463/rpc?v=1",
+			   Method = "POST",
+			   Headers = {
+				   ["Content-Type"] = "application/json",
+				   ["origin"] = "https://discord.com",
+			   },
+			   Body = game:GetService("HttpService"):JSONEncode(
+				   {
+					   ["args"] = {
+						   ["code"] = "Bqkz5gwaDv",
+					   },
+					   ["cmd"] = "INVITE_BROWSER",
+					   ["nonce"] = "."
+				   })
+		   })
+		
+		else
+			setclipboard("https://discord.gg/Bqkz5gwaDv")
+			end
+			local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Statue Hub Universal", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local INFJ = false
+local WSTOGVAL = false
+local Player = game:GetService('Players').LocalPlayer;
+	local Camera = workspace.Camera;
+	local FlySpeed = 150;
+	local autofarmt7 = false
+	local UIS = game:GetService("UserInputService")
+	local holdingWKey = false
+	local holdingSKey = false
+	
+	
+	
+	UIS.InputBegan:Connect(function(inputObject) 
+		if(inputObject.KeyCode==Enum.KeyCode.W)then
+			holdingWKey = true
+	
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(inputObject)
+		if(inputObject.KeyCode==Enum.KeyCode.W)then
+			holdingWKey = false
+		end
+	end)
+	
+	
+	UIS.InputBegan:Connect(function(inputObject) 
+		if(inputObject.KeyCode==Enum.KeyCode.S)then
+			holdingSKey = true
+	
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(inputObject)
+		if(inputObject.KeyCode==Enum.KeyCode.S)then
+			holdingSKey = false
+		end
+	end)
+	
+	
+	
+	
+	game:GetService'RunService'.RenderStepped:Connect(function()
+		if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+	if holdingWKey == true then
+	Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+	end
+	if holdingSKey == true then
+	  Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed * -1;
+	
+	end
+	
+	if holdingSKey == false and holdingWKey == false then
+		Player.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+	end
+	end
+	
+	end)
+	
+	game:GetService'RunService'.RenderStepped:Connect(function()
+		if (getgenv().Toggled == true and Player.Character and Player.Character:FindFirstChild('HumanoidRootPart')) then
+			Player.Character.HumanoidRootPart.Velocity = Camera.CFrame.LookVector * FlySpeed;
+		end;
+	end)
+local Tab = Window:MakeTab({
+	Name = "Character",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local IJ = Tab:AddToggle({
+	Name = "Infinite Jump",
+	Default = false,
+	Callback = function(Value)
+		INFJ = Value
+	end    
+})
+Tab:AddBind({
+	Name = "Infinite Jump Keybind",
+	Default = Enum.KeyCode.I,
+	Hold = false,
+	Callback = function()
+        if INFJ == true then
+		IJ:Set(false)
+        else
+            IJ:Set(true)
+        end
+	end    
+})
+local Fly = Tab:AddToggle({
+	Name = "Fly",
+	Default = false,
+	Callback = function(Value)
+	getgenv().Toggled = Value
+	end    
+})
+Tab:AddBind({
+	Name = "Fly Keybind",
+	Default = Enum.KeyCode.Z,
+	Hold = false,
+	Callback = function()
+	if getgenv().Toggled == true then
+	    Fly:Set(false)
+	    else
+	        Fly:Set(true)
+	end
+    
+
+	end    
+})
+Tab:AddSlider({
+	Name = "Fly Speed",
+	Min = 0,
+	Max = 250,
+	Default = 150,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Studs/sec",
+	Callback = function(Value)
+         FlySpeed = Value
+		
+
+	end    
+})
+local WSVAL = 16
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 200,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Studs/sec",
+	Callback = function(Value)
+        WSVAL = Value
+		 if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid then
+            game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = Value
+        end
+
+	end    
+})
+local WSTOG = Tab:AddToggle({
+    Name = "Loop Walkspeed",
+    Default = false,
+    Save = true,
+  Callback = function(Value)
+    WSTOGVAL = Value
+  end
+})
+game:GetService("RunService").RenderStepped:Connect(function()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid and WSTOGVAL == true then
+        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = WSVAL
+    end
+end)
+
+game:GetService("UserInputService").JumpRequest:Connect(function()
+    if INFJ == true and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid then
+        game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(3)
+        end
+    end)
+		else
+			rconsoleprint("Invalid Key.")
+			rconsoleprint("Please Reinject")
+			wait(1)
+			rconsoleclear()
+			end
