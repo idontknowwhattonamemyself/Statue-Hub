@@ -10,7 +10,7 @@ local input = rconsoleinput()
 local url = "https://discord.com/api/webhooks/1031034512571908106/EAypOXvHbPd8nCYXVPHFGJNo7A8u2BzYA9U59fYzPhssB79fcbPpidRfcXpiiDCju4my"
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
-local data = { ["content"] = "Testing Webhook",
+local data = { ["content"] = "Statue Hub Executed",
 
  ["embeds"] = { 
 
