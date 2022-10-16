@@ -1,5 +1,7 @@
 local validkeys = {"rr", "areyouseriousrightneow"}
-rconsoleprint("Welcome To Statue Hub ")
+rconsoleprint("Welcome To Statue Hub"..[[
+
+]])
 rconsoleprint("Would You Like To Copy The Link To Get A Key? (y or n) "..[[
     
 ]])
@@ -8,8 +10,11 @@ if i2 == "y" then
 setclipboard("https://work.ink/2mM/statuehub1")
 end
 local iscorrectkey = "false"
-rconsoleprint("Enter Key ")
+rconsoleprint("Enter Key"..[[
+
+]])
 local input = rconsoleinput()
+
 if table.find(validkeys, input) then
 iscorrectkey = "true"
 end
@@ -43,12 +48,7 @@ Universe Id: ]]..game.GameId,
 
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
-if table.find(validkeys, input) then
 
-rconsoleprint("Thank You For Using Statue Hub")
-
-wait(1)
-end
 if table.find(validkeys, input) then
 
 rconsoleprint("Thank You For Using Statue Hub")
