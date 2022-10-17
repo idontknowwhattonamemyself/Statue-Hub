@@ -93,7 +93,7 @@ local Section = Tab:AddSection({
 })
 local af
 Tab:AddToggle({
-	Name = "This is a toggle!",
+	Name = "Auto Farm",
 	Default = false,
 	Callback = function(Value)
 		af = Value
