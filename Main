@@ -116,6 +116,13 @@ game:GetService("ReplicatedStorage").Signals.RemoteEvents.GetWoolRemote:FireServ
 end
 end
 end)
+game:GetService("RunService").Heartbeat:Connect(function()
+    if af == true and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Head then
+
+        firetouchinterest(game:GetService("Players").LocalPlayer.Character.Head, game:GetService("Workspace").Obby.Money.Finish, 0)
+                firetouchinterest(game:GetService("Players").LocalPlayer.Character.Head, game:GetService("Workspace").Obby.Money.Finish, 1)
+                end
+end)
 
 		end
 		
