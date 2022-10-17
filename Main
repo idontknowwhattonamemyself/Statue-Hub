@@ -339,6 +339,21 @@ init:AddButton({
 
 			end
 	})
+	local fc
+		Tab:AddToggle({
+			Name = "Fast Arm",
+			Default = false,
+			Callback = function(Value)
+				fc = Value
+
+			end
+	})
+	game:GetService("RunService").Heartbeat:Connect(function()
+if fc == true then
+game:GetService("ReplicatedStorage").Remotes.Event.Animations.moveArm:FireServer()
+
+	end
+	end)
 	
 	game:GetService("RunService").Heartbeat:Connect(function()
 if aj == true and task.wait(1) then
@@ -354,9 +369,10 @@ if aj == true and task.wait(1) then
 
 end
 end)
+
 	game:GetService("RunService").Heartbeat:Connect(function()
 if ac == true and task.wait(1.2) then
-		
+	
        for i, v in pairs(plot:GetDescendants()) do
            if v.Name == "OpenDoorPrompt" and v.Parent.Parent.Parent.Parent == plot.CratePackager then
                if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.HumanoidRootPart then
