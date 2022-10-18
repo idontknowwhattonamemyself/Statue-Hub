@@ -1,4 +1,4 @@
-local validkeys = {"rr", "esexvak^1vlVv5UZiw6pH^LH$ifEcVjuqtwOk#3e"}
+local validkeys = {"rr", "M?vkXy9v?MZkVb1KkXVW29oLtspeUmJxiMhwxvx5"}
 rconsoleprint("Welcome To Statue Hub ")
 rconsoleprint("Would You Like To Copy The Link To Get A Key? (y or n) "..[[
     
