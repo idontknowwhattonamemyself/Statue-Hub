@@ -80,6 +80,35 @@ if syn then
 	else
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
+		if game.PlaceId == 10889408214 then
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Statue Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Statue Hub"})
+local ad
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Speed = Tab:AddToggle({
+	Name = "Auto Deflect",
+	Default = false,
+	Callback = function(Value)
+	ad = Value
+	end    
+})
+game:GetService("RunService").Heartbeat:Connect(function()
+if ad == true and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.HumanoidRootPart and game:GetService("Workspace").Ball and game:GetService("Workspace").Ball.Main and (game:GetService("Workspace").Ball.Main.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 15 then
+    
+    local args = {
+    [1] = "Deflect",
+    [2] = Vector3.new(0.41778963804244995, -0.24970394372940063, 0.8735557794570923)
+}
+
+game:GetService("Players").LocalPlayer.Character.Deflection.Remote:FireServer(unpack(args))
+
+    end
+end)
+end
 		if game.PlaceId == 8328351891 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Statue Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Statue Hub"})
