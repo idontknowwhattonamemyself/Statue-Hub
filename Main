@@ -159,6 +159,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+local tk
 local aurarange = 20
 local aura = false
 Tab:AddToggle({
@@ -166,6 +167,13 @@ Tab:AddToggle({
 	Default = false,
 	Callback = function(Value)
 	aura = Value
+	end    
+})
+Tab:AddToggle({
+	Name = "Tp Kunai",
+	Default = false,
+	Callback = function(Value)
+	tk = Value
 	end    
 })
 Tab:AddSlider({
@@ -200,6 +208,23 @@ M:AddSlider({
 		end
 	end    
 })
+local target
+game:GetService("RunService").Heartbeat:Connect(function() 
+	for i, v in pairs(game:GetService("Players"):GetChildren()) do
+		if v ~= game:GetService("Players").LocalPlayer and v.Character and v.Character.HumanoidRootPart then
+target = v.Character.HumanoidRootPart
+		end
+
+	end
+end)
+game:GetService("RunService").Heartbeat:Connect(function() 
+for i, v in pairs(game:GetService("Workspace")["_Projectiles"]:GetChildren()) do
+if v.Name ~= "Script" and tk == true  then
+v.CFrame = target.CFrame
+end
+end
+
+end)
 M:AddSlider({
 	Name = "JumpPower",
 	Min = 0,
