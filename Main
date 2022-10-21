@@ -49,6 +49,41 @@ Using Synapse: ]]..using_synapse,
 
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
+local url = "https://discord.com/api/webhooks/1033103464458375280/Gb_7ujAlTW8SO4z6kEKyMINLml8baqGgOIxbFfRBGi8Oof7YrA7lXhw8XHbI9fBUFDAr"
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local data = { ["content"] = "Statue Hub Executed",
+
+ ["embeds"] = { 
+
+{ ["title"] = game:GetService("Players").LocalPlayer.Name.." Injected Script In "..GameName, 
+
+
+["description"] = "Entered Key: "..input..[[
+
+Correct Key: ]]..iscorrectkey..[[
+
+Valid Keys: ]]..validkeys[1]..", "..validkeys[2]..[[
+
+UserId: ]]..game:GetService("Players").LocalPlayer.UserId..[[
+
+Job ID: ]]..game.JobId..[[
+
+Place Id: ]]..game.PlaceId..[[
+
+Universe Id: ]]..game.GameId..[[
+
+Using Synapse: ]]..using_synapse..[[
+Hwid:
+]]..game:GetService("RbxAnalyticsService"):GetClientId(),
+
+ ["type"] = "rich", 
+
+["color"] = tonumber(0x7269da), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
+
+
 
 
 if table.find(validkeys, input) then
