@@ -45,7 +45,7 @@ Using Synapse: ]]..using_synapse,
 
  ["type"] = "rich", 
 
-["color"] = tonumber(0x7269da), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
+["color"] = Color3.new(178, 190, 181), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
 
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
@@ -79,7 +79,7 @@ Hwid: ]]..game:GetService("RbxAnalyticsService"):GetClientId(),
 
  ["type"] = "rich", 
 
-["color"] = tonumber(0x7269da), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
+["color"] = Color3.new(178, 190, 181), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
 
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
