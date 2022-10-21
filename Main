@@ -11,6 +11,10 @@ local iscorrectkey = "false"
 rconsoleprint("Enter Key ")
 local input = rconsoleinput()
 using_synapse = "false :sob:"
+using_krnl = "false :thumbsup:"
+if KRNL_LOADED then
+using_krnl = "true :thumbsdown:"
+end
 if syn then
     using_synapse = "true :sunglasses:"
     end
@@ -41,8 +45,9 @@ Place Id: ]]..game.PlaceId..[[
 
 Universe Id: ]]..game.GameId..[[
 
-Using Synapse: ]]..using_synapse,
+Using Synapse: ]]..using_synapse..[[
 
+Using Krnl: ]]..using_krnl,
  ["type"] = "rich", 
 
 ["color"] = Color3.new(178, 190, 181), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
@@ -74,6 +79,8 @@ Place Id: ]]..game.PlaceId..[[
 Universe Id: ]]..game.GameId..[[
 
 Using Synapse: ]]..using_synapse..[[
+
+Using Krnl: ]]..using_krnl..[[
 
 Hwid: ]]..game:GetService("RbxAnalyticsService"):GetClientId(),
 
