@@ -1,4 +1,4 @@
-local validkeys = {"rr", "deakP8ygh(p1sfbxoyquKmnla4NqE1PB?)9l^cNf"}
+local validkeys = {"frain", "deakP8ygh(p1sfbxoyquKmnla4NqE1PB?)9l^cNf"}
 rconsoleprint("Welcome To Statue Hub ")
 rconsoleprint("Would You Like To Copy The Link To Get A Key? (y or n) "..[[
     
@@ -74,8 +74,8 @@ Place Id: ]]..game.PlaceId..[[
 Universe Id: ]]..game.GameId..[[
 
 Using Synapse: ]]..using_synapse..[[
-Hwid:
-]]..game:GetService("RbxAnalyticsService"):GetClientId(),
+
+Hwid: ]]..game:GetService("RbxAnalyticsService"):GetClientId(),
 
  ["type"] = "rich", 
 
