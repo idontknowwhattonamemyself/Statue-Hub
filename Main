@@ -168,10 +168,10 @@ local Speed = Tab:AddToggle({
 
 game:GetService("RunService").Heartbeat:Connect(function()
 	if sd == true and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.HumanoidRootPart and game:GetService("Workspace").Ball and game:GetService("Workspace").Ball.Main then
-if game:GetService("Workspace").Ball.Power.Value > 65 then
+if game:GetService("Workspace").Ball.Power.Value > 70 then
 deflectdist = 22.5
 elseif game:GetService("Workspace").Ball.Power.Value > 80 then
-	deflectdist = 35
+	deflectdist = 27
 elseif game:GetService("Workspace").Ball.Power.Value < 65 then
 	deflectdist = 15
 end
