@@ -123,7 +123,7 @@ if syn then
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
 		if game.GameId == 3240343305 then
-repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.CutsceneUI.Enabled == false
+repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.CutsceneUI.Enabled == false and game:GetService("Players").LocalPlayer.Character
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Statue Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Statue Hub"})
 
@@ -149,7 +149,7 @@ elseif v:FindFirstChild("Properties") and v.Properties:FindFirstChild("Location"
 end
 
 end
-for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
 if v.Name == "Freddy" and v:FindFirstChild("Properties") then
 freddy = v
 elseif v.Name == "Chica" and v:FindFirstChild("Properties") then
@@ -215,6 +215,15 @@ Tab:AddToggle({
         
 	end    
 })
+local s
+Tab:AddToggle({
+	Name = "Speed",
+	Default = false,
+	Callback = function(Value)
+		s = Value
+        
+	end    
+})
 game:GetService("RunService").RenderStepped:Connect(function()
 if aesp == true then
     if gfreddy ~= nil and not  gfreddy:FindFirstChild("Highlight") then
@@ -277,6 +286,34 @@ elseif Value == "Vent Reset" and game:GetService("Players").LocalPlayer.Characte
     end
 	end    
 })
+game:GetService('RunService').Heartbeat:Connect(function()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid and s == true then
+        game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 70
+        end
+end)
+local changews = function()
+    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Humanoid and s == true then
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 70
+end
+Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(changews)
+game:GetService("RunService").Heartbeat:Connect(function()
+if task.wait(1) then
+    for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+        if v.Name == "Freddy" and v:FindFirstChild("Properties") then
+        freddy = v
+        elseif v.Name == "Chica" and v:FindFirstChild("Properties") then
+            chica = v
+        elseif v.Name == "Foxy" and v:FindFirstChild("Properties") then
+            foxy = v
+        elseif v.Name == "Bonnie" and v:FindFirstChild("Properties") then
+            bonnie = v
+        elseif v.Name == "GoldenFreddy" then
+            gfreddy = v
+        end
+        
+        end
+end
+end)
 OrionLib:Init()
 end
 if game.PlaceId == 10889408214 then
