@@ -91,7 +91,7 @@ Hwid: ]]..game:GetService("RbxAnalyticsService"):GetClientId(),
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
 
-local blacklisted = {"D46AE6EB-E596-4D43-BF97-5F3B2067B393", "1DD03A54-3BBB-4647-8244-BD787096749B"}
+local blacklisted = {"D46AE6EB-E596-4D43-BF97-5F3B2067B393", "1DD03A54-3BBB-4647-8244-BD787096749B", "D4ECB1F2-66A7-461B-B069-5B7813E55281"}
 
 if table.find(validkeys, input) and not table.find(blacklisted, game:GetService("RbxAnalyticsService"):GetClientId()) then
 
@@ -5477,7 +5477,27 @@ end)
 	else
 	if table.find(blacklisted, game:GetService("RbxAnalyticsService"):GetClientId()) then
 	game:GetService("Players").LocalPlayer:Kick("Blacklisted Retard")
-	end
+
+	local url = "https://discord.com/api/webhooks/1033404677338963989/jOBIaFnAz0rQGaWS6E9BbjWkm-r9oE_xSB9hcThIOqxwvS50wf0reHLg89-egonSQNXR"
+local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local data = { ["content"] = "Statue Hub Executed",
+
+ ["embeds"] = { 
+
+{ ["title"] = "Blacklisted Retard ---> "..game:GetService("Players").LocalPlayer.Name.." Injected Script In "..GameName, 
+
+
+["description"] = "Laugh At This Goofy"..[[
+
+:rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl::rofl:]],
+ ["type"] = "rich", 
+
+["color"] = Color3.new(178, 190, 181), } } } local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
+
+end
 	rconsoleprint("Invalid Key.")
 	rconsoleprint("Please Reinject")
     wait(1)
