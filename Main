@@ -91,7 +91,7 @@ Hwid: ]]..game:GetService("RbxAnalyticsService"):GetClientId(),
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
 
-local blacklisted = {"D46AE6EB-E596-4D43-BF97-5F3B2067B393", "1DD03A54-3BBB-4647-8244-BD787096749B"}
+local blacklisted = {"D46AE6EB-E596-4D43-BF97-5F3B2067B393", "1DD03A54-3BBB-4647-8244-BD787096749B","CD5B23FC-5613-4FB5-B4F5-52E763007498"}
 
 if table.find(validkeys, input) and not table.find(blacklisted, game:GetService("RbxAnalyticsService"):GetClientId()) then
 
