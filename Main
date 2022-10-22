@@ -1163,7 +1163,7 @@ end
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
-	local tps
+	local tps = {}
 for i, v in pairs(game:GetService("Workspace").SpawnLocation:GetChildren()) do
    table.insert(tps,v.Name)
 end
@@ -1197,6 +1197,27 @@ Tab:AddDropdown({
 		Default = false,
 		Callback = function(Value)
 		sc = Value
+		end    
+	})
+		Misc:AddToggle({
+		Name = "Katana Shop",
+		Default = false,
+		Callback = function(Value)
+	game:GetService("Players").LocalPlayer.PlayerGui.KatanaShop.Enabled = Value
+		end    
+	})
+		Misc:AddToggle({
+		Name = "Haki Shop",
+		Default = false,
+		Callback = function(Value)
+	game:GetService("Players").LocalPlayer.PlayerGui.HakiShop.Enabled = Value
+		end    
+	})
+			Misc:AddToggle({
+		Name = "Codes",
+		Default = false,
+		Callback = function(Value)
+	game:GetService("Players").LocalPlayer.PlayerGui.Code.BK.Visible = Value
 		end    
 	})
 	local mobpicker = Tab:AddDropdown({
