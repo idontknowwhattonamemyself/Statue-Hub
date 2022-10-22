@@ -1222,6 +1222,12 @@ end)
            
 game:GetService("RunService").RenderStepped:Connect(function()
     if hbe == true then
+    for i, v in pairs(game:GetService("ReplicatedStorage").Document.DevilFruit:GetDescendants()) do
+    if v.ClassName == "RemoteEvent" and game:GetService("Players").LocalPlayer.Backpack and v.Parent.Name == game:GetService("Players").LocalPlayer.Data.DevilFruitOwned.Value then
+        v:FireServer()
+        
+        end
+    end
    for i, v in pairs(game:GetService("Workspace").Mob:GetDescendants()) do
     if v.Name == mobpicked and hbe == true and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.HumanoidRootPart then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame 
