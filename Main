@@ -1163,16 +1163,18 @@ end
 		Icon = "rbxassetid://4483345998",
 		PremiumOnly = false
 	})
-	local tps = {}
+	local tps
 for i, v in pairs(game:GetService("Workspace").SpawnLocation:GetChildren()) do
    table.insert(tps,v.Name)
 end
-Misc:AddDropdown({
+Tab:AddDropdown({
 	Name = "Teleports",
-	Default = "1",
+	Default = "...",
 	Options = tps,
 	Callback = function(Value)
+	    if game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.HumanoidRootPart then
 		game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").SpawnLocation:FindFirstChild(Value).Loc.CFrame
+	end
 	end    
 })
 	
@@ -1216,6 +1218,18 @@ Misc:AddDropdown({
 			end
 	end
 		 mobpicker:Refresh(newmobtable,true)
+		  end    
+	})
+	Misc:AddButton({
+		Name = "Grab Fruits",
+		Callback = function()
+			for i, v in pairs(game:GetService("Workspace").SpawnLocation:GetChildren()) do
+				if v:FindFirstChild("Handle") and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Head then
+				firetouchinterest(v.Handle, game:GetService("Players").LocalPlayer.Character.Head, 0)
+					firetouchinterest(v.Handle, game:GetService("Players").LocalPlayer.Character.Head, 1)
+			
+					end
+				end
 		  end    
 	})
 	game:GetService("RunService").RenderStepped:Connect(function()
