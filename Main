@@ -1140,7 +1140,6 @@ end
 		if game.GameId == 3150475059 then
 	rconsoleprint("Football Fusion Is Currently Patched.")
 		end
-		
 		if game.GameId == 3904583189 then
 	local mobtable = {}
 	local mobpicked
@@ -1244,8 +1243,8 @@ Tab:AddDropdown({
 	Misc:AddButton({
 		Name = "Grab Fruits",
 		Callback = function()
-			for i, v in pairs(game:GetService("Workspace").SpawnLocation:GetChildren()) do
-				if v:FindFirstChild("Handle") and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Head then
+			for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+				if v.ClassName == "Tool" and v:FindFirstChild("Handle") and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character.Head then
 				firetouchinterest(v.Handle, game:GetService("Players").LocalPlayer.Character.Head, 0)
 					firetouchinterest(v.Handle, game:GetService("Players").LocalPlayer.Character.Head, 1)
 			
