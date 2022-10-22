@@ -260,7 +260,7 @@ end)
 Tab:AddDropdown({
 	Name = "Teleports",
 	Default = "...",
-	Options = {"Marrionette", "Secret", "North Generator", "West Generator"},
+	Options = {"Marrionette", "Secret", "North Generator", "West Generator", "Vent Reset"},
 	Callback = function(Value)
 	if Value == "Marrionette" and game:GetService("Players").LocalPlayer.Character and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
 game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-79, 4, -151)
@@ -271,6 +271,8 @@ game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFram
         
     elseif Value == "West Generator" and game:GetService("Players").LocalPlayer.Character  and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = westgen.InteractPart.CFrame
+elseif Value == "Vent Reset" and game:GetService("Players").LocalPlayer.Character  and game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-287, 4, -317)
 
     end
 	end    
