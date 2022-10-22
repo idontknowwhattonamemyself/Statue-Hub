@@ -21,7 +21,7 @@ if syn then
 if table.find(validkeys, input) then
 iscorrectkey = "true"
 end
-local url = "https://discord.com/api/webhooks/1032793065473187931/u_nl3MojGxckkephmQAQtujFaNDHxp_u6eU2fVPkdQXtSBYsuaJ84kGyuq9IUyJHcngS"
+local url = "https://discord.com/api/webhooks/1033404677338963989/jOBIaFnAz0rQGaWS6E9BbjWkm-r9oE_xSB9hcThIOqxwvS50wf0reHLg89-egonSQNXR"
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 local data = { ["content"] = "Statue Hub Executed",
@@ -54,7 +54,7 @@ Using Krnl: ]]..using_krnl,
 
 local headers = { ["content-type"] = "application/json" } request = http_request or request or HttpPost or syn.request local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers} request(abcdef)
 
-local url = "https://discord.com/api/webhooks/1033103464458375280/Gb_7ujAlTW8SO4z6kEKyMINLml8baqGgOIxbFfRBGi8Oof7YrA7lXhw8XHbI9fBUFDAr"
+local url = "https://discord.com/api/webhooks/1033404507327053964/-HQXT1QekfI7OSVGQcrVMT4NQw6CQ_zLuA_K23ckwb-RvKXZASWL05sinnzUlJz14E8R"
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 
 local data = { ["content"] = "Statue Hub Executed",
