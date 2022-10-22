@@ -5516,7 +5516,7 @@ end)
 	end
 	else
 	if table.find(blacklisted, game:GetService("RbxAnalyticsService"):GetClientId()) then
-	game:GetService("Players").LocalPlayer:Kick("Blacklisted Retard")
+	game:GetService("Players").LocalPlayer:Kick("Y̶̠̭̺͈̓̐̾͝ò̸͎͙̘̼̤ư̵̲͋̇͠ ̴̫̼̿̎̊̚I̶̡͚̲̰͓͋͘D̴͉̝́I̷̧͎͍̞͌̄̇̃͠Ȯ̶̻̜͛̎T̷̗̩̫̜͕̄")
 
 	local url = "https://discord.com/api/webhooks/1033404677338963989/jOBIaFnAz0rQGaWS6E9BbjWkm-r9oE_xSB9hcThIOqxwvS50wf0reHLg89-egonSQNXR"
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
