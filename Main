@@ -366,12 +366,12 @@ game:GetService("RunService").Heartbeat:Connect(function()
 if game:GetService("Workspace").Ball.Power.Value > 70 then
 deflectdist = 15
 elseif game:GetService("Workspace").Ball.Power.Value > 80 then
-	deflectdist = 18
+	deflectdist = 22
 	elseif game:GetService("Workspace").Ball.Power.Value < 85 then
-	deflectdist = 23
+	deflectdist = 25
 
 elseif game:GetService("Workspace").Ball.Power.Value < 60 then
-	deflectdist = 10
+	deflectdist = 20
 end
 if _G.debug == true then
 rconsoleprint([[
