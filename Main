@@ -149,7 +149,7 @@ end
 local ar
 local as
 local r = function()
-    if task.wait(1) and ar == true and game:GetService("Players").LocalPlayer.RebirthPrice.Value < game:GetService("Players").LocalPlayer.leaderstats.SM.Value then
+    if  ar == true and game:GetService("Players").LocalPlayer.RebirthPrice.Value < game:GetService("Players").LocalPlayer.leaderstats.SM.Value then
     print("Rebirth Available")
     game:GetService("ReplicatedStorage").BuyRebirth:FireServer()
 
@@ -157,7 +157,7 @@ end
 
 end
 local s = function()
-    if task.wait(1) and as == true and game:GetService("Players").LocalPlayer.Price.Value < game:GetService("Players").LocalPlayer.leaderstats.Coins.Value then
+    if  as == true and game:GetService("Players").LocalPlayer.Price.Value < game:GetService("Players").LocalPlayer.leaderstats.Coins.Value then
     
     game:GetService("ReplicatedStorage").BuySM:FireServer()
 
