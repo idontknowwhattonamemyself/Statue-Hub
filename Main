@@ -123,6 +123,9 @@ if syn then
 		setclipboard("https://discord.gg/Bqkz5gwaDv")
 		end
 		if game.PlaceId == 9912491609 then
+    game:GetService("Players").LocalPlayer.PlayerGui.RebirthShopFrame.LocalScript["vine boom"]:remove()
+    game:GetService("CoreGui").PurchasePrompt:remove()
+    game:GetService("Players").LocalPlayer.PlayerGui.RebirthShopFrame.TheRock:remove()
 local gc = function()
 for i, v in pairs(game:GetService("Workspace").BasicCoins:GetChildren()) do
     if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
@@ -143,6 +146,23 @@ task.wait(1)
     game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
 end
 end
+local ar
+local as
+local r = function()
+    if task.wait(1) and ar == true and game:GetService("Players").LocalPlayer.RebirthPrice.Value < game:GetService("Players").LocalPlayer.leaderstats.SM.Value then
+    print("Rebirth Available")
+    game:GetService("ReplicatedStorage").BuyRebirth:FireServer()
+
+end
+
+end
+local s = function()
+    if task.wait(1) and as == true and game:GetService("Players").LocalPlayer.Price.Value < game:GetService("Players").LocalPlayer.leaderstats.Coins.Value then
+    
+    game:GetService("ReplicatedStorage").BuySM:FireServer()
+
+end
+    end
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Statue Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "Statue Hub"})
 local Tab = Window:MakeTab({
@@ -172,10 +192,30 @@ Tab:AddToggle({
 	are = Value
 	end    
 })
+Tab:AddToggle({
+	Name = "Auto Rebirth",
+	Default = false,
+	Callback = function(Value)
+	ar = Value
+	end    
+})
+Tab:AddToggle({
+	Name = "Auto Speed Upgrade",
+	Default = false,
+	Callback = function(Value)
+	as = Value
+	end    
+})
 game:GetService("RunService").Heartbeat:Connect(function()
     if are == true then
         re()
         end
+end)
+game:GetService("RunService").Heartbeat:Connect(function()
+    s()
+end)
+game:GetService("RunService").Heartbeat:Connect(function()
+  r()
 end)
 game:GetService("RunService").Heartbeat:Connect(function()
     if agc == true then
