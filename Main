@@ -130,7 +130,13 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-local b = game:GetService("Workspace").OldRoblox.Borders
+local b = Instance.new("Folder", game:GetService("Workspace"))
+for i, v in pairs(game:GetService("Workspace"):GetDescendants()) do
+    if v.Name == "Borders" or v.Parent == game:GetService("Workspace").OldRoblox and v:FindFirstChild("SurfaceGui") then
+        v.Parent = b
+        end
+    end
+
 Tab:AddToggle({
 	Name = "Auto Gems",
 	Default = false,
@@ -145,7 +151,7 @@ Tab:AddToggle({
 	    if Value  == true then
 		b.Parent = nil
 		else
-		    b.Parent = game:GetService("Workspace").OldRoblox
+		    b.Parent = game:GetService("Workspace")
 		end
 	end    
 })
