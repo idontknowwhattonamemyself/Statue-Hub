@@ -142,8 +142,6 @@ if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:Fin
 
         firetouchinterest(game:GetService("Workspace").Tiles["202k"],game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"), 0)
         firetouchinterest(game:GetService("Workspace").Tiles["202k"],game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"), 1)
-task.wait(1)
-    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
 end
 end
 local ar
