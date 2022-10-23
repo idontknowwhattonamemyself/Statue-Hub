@@ -134,7 +134,13 @@ OrionLib:MakeNotification({
 	Name = "Made By wowzers!#0560",
 	Content = "Thanks For Using Statue Hub",
 	Image = "rbxassetid://4483345998",
-	Time = 5
+	Time = 50
+})
+OrionLib:MakeNotification({
+	Name = "VOLUME WARNING",
+	Content = "SOME SETTINGS WILL EXPLODE UR EARS YOU HAVE BEEN WARNED TURN UR VOLUME DOWN TO 0",
+	Image = "rbxassetid://4483345998",
+	Time = 100
 })
 local im
 local ab
