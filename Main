@@ -22,7 +22,7 @@ local Blacklisted = request({
 	Method = "GET"
 })
 local GameList = request({
-	Url = "https://raw.githubusercontent.com/idontknowwhattonamemyself/a/Lua/Blacklisted.json",
+	Url = "https://raw.githubusercontent.com/idontknowwhattonamemyself/a/Lua/Games",
 	Method = "GET"
 })
 
