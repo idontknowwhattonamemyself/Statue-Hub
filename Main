@@ -1,1 +1,2 @@
-loadstring(game:HttpGet("https://www.soggy-ware.cf/StatueHubTemp"))()
+loadstring(game:HttpGet("https://soggyhubv2.vercel.app/StatueHubTemp
+"))()
