@@ -1,1 +1,6 @@
-loadstring(game:HttpGet("https://www.statuescripts.com/Script"))()
+local a = loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/a/Lua/Games"))()
+for i, v in pairs(a) do 
+if v == game.PlaceId then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/a/Lua/"..i))()
+end
+end
