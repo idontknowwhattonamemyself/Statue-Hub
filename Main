@@ -1,6 +1,6 @@
 local a = loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/a/Lua/Games"))()
 for i, v in pairs(a) do 
-if v == game.PlaceId then
+if v == game.PlaceId or v == game.GameId then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/idontknowwhattonamemyself/a/Lua/"..i))()
 end
 end
